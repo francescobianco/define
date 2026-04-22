@@ -39,23 +39,54 @@ When `define` flags something, it is giving you the test result early — derive
 [ step 1 ]  define extract ./src --out model.def    # ~2 seconds
 [ step 2 ]  define check model.def                  # ~1 second
 
-→ closed, low impact   → run only the tests likely affected
-→ closed, high impact  → run the full suite, you know why
-→ NOT closed           → the tests will fail — fix the design first
+→ NOT closed           → the tests will fail — fix the design first, save the run
+→ closed, low impact   → run only the tests likely affected by the change
+→ closed, high impact  → run the full suite — you already know why
 ```
 
-The pipeline does not skip tests. It knows *before the tests run* whether they will pass structurally, and it acts on that knowledge.
+The pipeline does not skip tests. It knows *before* whether the tests will pass structurally and acts on that knowledge.
 
-### The numbers
+---
 
-A typical mid-size project spends **8–15 minutes per CI run** in test execution.  
-`define` adds **3 seconds** of structural anticipation. In exchange:
+## Save effort. Save time. Save money.
 
-- **Broken-import failures** are predicted before any compilation starts
-- **Dead modules** are surfaced before they accumulate in the codebase
-- **Change impact** is visible — a small graph change can be confirmed safe without running the full suite
+Moving the answer earlier in the pipeline has a direct economic impact.
 
-In a team running 50 CI builds/day, anticipating even 2 broken builds per day saves **25+ minutes of compute** — and the context-switch cost of a developer waiting for a result they could have known in seconds.
+### Effort
+
+A broken dependency discovered by a test means:
+1. Push → wait for CI to start (~2 min)
+2. Wait for setup: Docker pull, `npm install`, migrations (~5 min)
+3. Watch tests fail for the wrong reason (~3 min)
+4. Read the error, realize it is a missing import, fix it
+5. Push again
+
+`define` surfaces that missing import in step 1, before any of the above runs.  
+The developer fixes the design, pushes once, and moves on.
+
+### Time
+
+| Scenario | Without `define` | With `define` |
+|----------|-----------------|---------------|
+| Broken dependency | discovered after ~10 min | flagged in ~3 sec |
+| Dead module added | silent until someone notices | surfaced on next push |
+| Low-impact change | full test suite runs | structural scope is narrow → targeted run |
+| Circular dep introduced | runtime error in production or tests | caught before merge |
+
+### Money
+
+A team running **50 CI builds/day** on a standard runner (~$0.008/min):
+
+| | Builds/day | Avg duration | Daily cost |
+|--|--|--|--|
+| Before `define` | 50 | 12 min | ~$4.80 |
+| 2 broken builds caught early | 48 full + 2 × 3 sec | 11.6 min avg | ~$4.64 |
+| Low-impact builds scoped | further reduction | — | — |
+
+Saving 2 full broken runs per day = **~$0.16/day = ~$58/year** per pipeline — before accounting for developer time, which is the real cost.
+
+At **$80/hr developer rate**, a developer interrupted by a broken CI run loses ~20 min (context switch + fix + re-push).  
+2 such interruptions/day = **$53/day = ~$14,000/year per developer**.
 
 ---
 
