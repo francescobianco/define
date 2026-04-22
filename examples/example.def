@@ -1,0 +1,19 @@
+# Example model from IDEA.md
+
+define Example1 with Example2, Routes
+
+define Example2 with load, test
+
+define load
+define test
+
+define Routes with /routes/a
+
+define /routes/a {
+    load;
+    Example2 test;
+}
+
+# Unused concepts (for dead concept detection demo)
+define Debug
+define /routes/old
