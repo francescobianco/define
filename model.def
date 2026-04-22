@@ -1,0 +1,8 @@
+# extracted by: define extract .
+
+define main with cmd
+define cmd with internal/dsl, internal/graph, internal/report, internal/extractor
+define internal/dsl
+define internal/extractor
+define internal/graph with internal/dsl
+define internal/report with internal/graph

@@ -1,0 +1,23 @@
+language: go
+
+extract_dir: .
+
+sources:
+  - "**/*.go"
+
+ignore:
+  - "**/*_test.go"
+  - vendor/**
+
+concepts:
+  package:
+    # each Go package directory is one concept
+    # internal/* packages keep their full path as name
+    # root package uses the Go package name (e.g. "main")
+
+relations:
+  with:
+    from: imports   # Go import statements → "with" deps
+
+  invoke:
+    from: function_calls   # planned for v0.2
