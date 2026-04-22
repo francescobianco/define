@@ -1,59 +1,61 @@
 # define
 
-> **A structural preflight check for CI pipelines.**  
-> Catch broken architecture, dead code and unreachable modules *before* running a single test.
+> **Predict what your tests will find — before they run.**
 
 ---
 
-## The problem
+## The idea
 
-Every CI pipeline runs tests. Most of them run *all* tests, *every time*, regardless of what changed.  
-This is safe but wasteful:
+Tests are essential. They will always be the source of truth for runtime correctness.  
+But tests are *reactive* by nature: they tell you something is broken only after executing.
 
-- A broken import crashes the test runner after 10 minutes of setup
-- Dead code inflates the test matrix silently
-- Architectural regressions sneak in with no early signal
+`define` is *proactive*: it reads the structure of your codebase and tells you, in advance, what the tests are going to find.
 
-Tests are the right tool for runtime correctness. They are the wrong tool for structural problems.
+> If `define` says a dependency is missing, the tests will say it too.  
+> You just know it 2 seconds into the pipeline instead of 10 minutes in.
 
----
-
-## What `define` does
-
-`define` extracts a **concept graph** from your codebase — packages, classes, modules — and verifies it *statically* before tests run:
-
-| Check | What it catches |
-|-------|----------------|
-| **Closure** | missing dependencies, undefined references |
-| **Reachability** | packages declared but unreachable from the entry point |
-| **Dead concepts** | symbols never referenced, never invoked |
-| **Cycle detection** | circular dependencies that block clean builds |
-
-If the graph is broken, `define` **fails fast** — before Docker pulls, before `npm install`, before any test runs.
+This is not about skipping tests. It is about **moving the answer earlier** — from the end of the pipeline to the beginning.
 
 ---
 
-## Save effort. Save time. Save money.
+## What `define` anticipates
+
+`define` extracts a **concept graph** from your codebase — packages, classes, modules — and checks its structural integrity:
+
+| Signal | What it predicts |
+|--------|-----------------|
+| **Closure** | "these tests will fail: a dependency is undefined" |
+| **Reachability** | "this module will never be exercised from the entry point" |
+| **Dead concepts** | "these symbols are declared but nothing reaches them" |
+| **Cycle detection** | "this circular dependency will cause a runtime or import error" |
+
+When `define` flags something, it is giving you the test result early — derived from structure alone, with no execution cost.
+
+---
+
+## Anticipate. Don't wait.
 
 ```
-[ step 1 ]  define extract ./src --out model.def    # ~1 second
+[ step 1 ]  define extract ./src --out model.def    # ~2 seconds
 [ step 2 ]  define check model.def                  # ~1 second
 
-if NOT closed  → FAIL FAST  ← stop here, fix the design
-if low impact  → run only affected tests
-if high impact → run full suite
+→ closed, low impact   → run only the tests likely affected
+→ closed, high impact  → run the full suite, you know why
+→ NOT closed           → the tests will fail — fix the design first
 ```
+
+The pipeline does not skip tests. It knows *before the tests run* whether they will pass structurally, and it acts on that knowledge.
 
 ### The numbers
 
-A typical mid-size project spends **8–15 minutes per CI run** on test execution.  
-`define` adds **2 seconds** of preflight. In exchange:
+A typical mid-size project spends **8–15 minutes per CI run** in test execution.  
+`define` adds **3 seconds** of structural anticipation. In exchange:
 
-- **Broken-import builds** are caught in step 1, not after 10 min of compilation
-- **Dead modules** surface before they accumulate technical debt
-- **Impact scope** is visible — a small graph change can skip 80% of the test suite
+- **Broken-import failures** are predicted before any compilation starts
+- **Dead modules** are surfaced before they accumulate in the codebase
+- **Change impact** is visible — a small graph change can be confirmed safe without running the full suite
 
-In a team running 50 CI builds/day, eliminating even 2 failed runs saves **25+ minutes of compute per day** — and hours of developer wait time.
+In a team running 50 CI builds/day, anticipating even 2 broken builds per day saves **25+ minutes of compute** — and the context-switch cost of a developer waiting for a result they could have known in seconds.
 
 ---
 
