@@ -1,0 +1,10 @@
+# extracted by: define extract labs/repos/gin --config labs/profiles/go-generic.yml
+
+define gin with internal/bytesconv, binding, render, codec/json, internal/fs
+define binding with codec/json, internal/bytesconv
+define codec/json
+define ginS with gin
+define internal/bytesconv
+define internal/fs
+define render with internal/fs, codec/json, internal/bytesconv
+define testdata/protoexample

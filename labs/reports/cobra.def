@@ -1,0 +1,4 @@
+# extracted by: define extract labs/repos/cobra --config labs/profiles/go-generic.yml
+
+define cobra
+define doc with cobra

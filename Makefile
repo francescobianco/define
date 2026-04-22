@@ -1,7 +1,9 @@
 BIN     := define
 INSTALL := $(HOME)/.local/bin/$(BIN)
+LABS    := labs/repos
+REPORTS := labs/reports
 
-.PHONY: build install uninstall test clean
+.PHONY: build install uninstall test clean labs-fetch labs-analyze labs-clean
 
 build:
 	go build -o $(BIN) .
@@ -20,3 +22,36 @@ test:
 
 clean:
 	rm -f $(BIN)
+
+# Clone / update all repos listed in labs/repos.txt
+labs-fetch:
+	@mkdir -p $(LABS)
+	@grep -v '^\s*#' labs/repos.txt | grep -v '^\s*$$' | while read name url branch profile; do \
+		dest=$(LABS)/$$name; \
+		if [ -d "$$dest/.git" ]; then \
+			echo "→ update  $$name"; \
+			git -C "$$dest" pull --quiet; \
+		else \
+			echo "→ clone   $$name ($$branch)"; \
+			git clone --quiet --depth=1 --branch "$$branch" "$$url" "$$dest" 2>&1 | grep -v '^warning'; \
+		fi; \
+	done
+
+# Run define extract + check on every repo, using the profile from labs/profiles/
+# Profile lives outside the clone so experiments don't touch the upstream code.
+labs-analyze: build
+	@mkdir -p $(REPORTS)
+	@grep -v '^\s*#' labs/repos.txt | grep -v '^\s*$$' | while read name url branch profile; do \
+		dir=$(LABS)/$$name; \
+		cfg=labs/profiles/$$profile.yml; \
+		out=$(REPORTS)/$$name.def; \
+		report=$(REPORTS)/$$name.txt; \
+		[ -d "$$dir" ] || { echo "skip $$name (not cloned)"; continue; }; \
+		echo ""; \
+		echo "=== $$name  [profile: $$profile] ==="; \
+		./$(BIN) extract "$$dir" --config "$$cfg" -o "$$out" 2>/dev/null && \
+		./$(BIN) check "$$out" 2>&1 | tee "$$report" || true; \
+	done
+
+labs-clean:
+	rm -rf $(LABS) $(REPORTS)/*.def $(REPORTS)/*.txt

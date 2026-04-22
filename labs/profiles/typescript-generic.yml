@@ -1,0 +1,24 @@
+language: typescript
+
+sources:
+  - "src/**/*.ts"
+  - "lib/**/*.ts"
+
+ignore:
+  - "**/*.spec.ts"
+  - "**/*.test.ts"
+  - "**/*.d.ts"
+  - node_modules/**
+
+concepts:
+  module:
+    # each .ts file = one concept (named by path relative to src/)
+
+relations:
+  with:
+    from: imports               # import { X } from './foo'
+
+  invoke:
+    from: function_calls        # v0.2
+
+# Planned for v0.2

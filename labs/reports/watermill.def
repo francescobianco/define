@@ -1,0 +1,33 @@
+# extracted by: define extract labs/repos/watermill --config labs/profiles/go-generic.yml
+
+define watermill
+define components/cqrs with watermill, message
+define components/delay with message
+define components/fanin with watermill, message
+define components/forwarder with watermill, message
+define components/metrics with internal, message
+define components/requestreply with watermill, message, components/cqrs
+define components/requeuer with watermill, message
+define dev/consolidate-gomods
+define dev/update-examples-deps
+define dev/validate-examples
+define docs/content/docs/message with message
+define docs/content/docs/snippets/amqp-consumer-groups with watermill, message
+define docs/content/docs/snippets/tail-log-file with watermill, message
+define internal
+define internal/publisher with message, watermill
+define internal/subscriber with message
+define message with watermill, internal, pubsub/sync
+define message/router/middleware with message, components/delay, watermill
+define message/router/plugin with message
+define message/subscriber with message
+define pubsub
+define pubsub/gochannel with watermill, message
+define pubsub/sync
+define pubsub/tests with message, message/subscriber, watermill, internal, internal/subscriber
+define tools/mill/cmd with message, message/router/plugin, watermill, tools/mill/cmd/internal
+define tools/mill/cmd/internal
+define tools/mill with tools/mill/cmd
+define tools/pq/backend with components/delay, tools/pq/cli
+define tools/pq/cli with components/delay, message/router/middleware
+define tools/pq with tools/pq/backend, tools/pq/cli

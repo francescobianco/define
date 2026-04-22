@@ -1,0 +1,31 @@
+repos:
+
+  - name: cobra
+    url: https://github.com/spf13/cobra
+    branch: main
+    lang: go
+    note: "CLI framework — we depend on it, good closure baseline"
+
+  - name: gin
+    url: https://github.com/gin-gonic/gin
+    branch: master
+    lang: go
+    note: "HTTP framework — layered architecture, good dead-concept candidate"
+
+  - name: chi
+    url: https://github.com/go-chi/chi
+    branch: master
+    lang: go
+    note: "minimal HTTP router — small surface, good for reachability"
+
+  - name: fx
+    url: https://github.com/uber-go/fx
+    branch: main
+    lang: go
+    note: "DI framework — rich dependency graph, ideal for define"
+
+  - name: watermill
+    url: https://github.com/ThreeDotsLabs/watermill
+    branch: master
+    lang: go
+    note: "message broker abstraction — modular, expect dead concepts"

@@ -1,0 +1,9 @@
+# name           url                                              branch    profile
+cobra            https://github.com/spf13/cobra                   main      go-generic
+gin              https://github.com/gin-gonic/gin                 master    go-generic
+chi              https://github.com/go-chi/chi                    master    go-generic
+fx               https://github.com/uber-go/fx                    master    go-generic
+watermill        https://github.com/ThreeDotsLabs/watermill       master    go-generic
+laravel          https://github.com/laravel/laravel                11.x      php-laravel
+symfony          https://github.com/symfony/symfony                7.2       php-laravel
+nestjs           https://github.com/nestjs/nest                    master    typescript-generic

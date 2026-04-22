@@ -1,0 +1,103 @@
+fx is closed
+
+Coverage:
+  - declared:  37
+  - reachable: 6
+  - invoked:   0
+
+Dead concepts:
+  - never referenced:
+      docs/ex/annotate
+      docs/ex/get-started/01-minimal
+      docs/ex/get-started/02-http-server
+      docs/ex/get-started/03-echo-handler
+      docs/ex/get-started/04-logger
+      docs/ex/get-started/05-registration
+      docs/ex/get-started/06-another-handler
+      docs/ex/get-started/07-many-handlers
+      docs/ex/modules
+      docs/ex/parameter-objects
+      docs/ex/result-objects
+      docs/ex/value-groups/consume
+      docs/ex/value-groups/feed
+      docs/internal/apptest
+      docs/internal/httptest
+      fxtest
+      internal/e2e/shutdowner_run_exitcode
+      internal/e2e/shutdowner_wait_exitcode
+      internal/fxlog/foovendor
+      internal/fxlog/sample.git
+      tools/analysis/passes/allfxevents/testdata/src/a
+      tools/analysis/passes/allfxevents/testdata/src/b/fxevent
+      tools/analysis/passes/allfxevents/testdata/src/b
+      tools/analysis/passes/allfxevents/testdata/src/go.uber.org/fx/fxevent
+      tools/cmd/fxlint
+  - never invoked:
+      docs/ex/annotate
+      docs/ex/annotate/github
+      docs/ex/get-started/01-minimal
+      docs/ex/get-started/02-http-server
+      docs/ex/get-started/03-echo-handler
+      docs/ex/get-started/04-logger
+      docs/ex/get-started/05-registration
+      docs/ex/get-started/06-another-handler
+      docs/ex/get-started/07-many-handlers
+      docs/ex/modules
+      docs/ex/parameter-objects
+      docs/ex/result-objects
+      docs/ex/value-groups/consume
+      docs/ex/value-groups/feed
+      docs/internal/apptest
+      docs/internal/exectest
+      docs/internal/httptest
+      docs/internal/iotest
+      docs/internal/test
+      fxevent
+      fxtest
+      internal/e2e/shutdowner_run_exitcode
+      internal/e2e/shutdowner_wait_exitcode
+      internal/fxclock
+      internal/fxlog
+      internal/fxlog/foovendor
+      internal/fxlog/sample.git
+      internal/fxreflect
+      internal/lifecycle
+      internal/testutil
+      tools/analysis/passes/allfxevents
+      tools/analysis/passes/allfxevents/testdata/src/a
+      tools/analysis/passes/allfxevents/testdata/src/b/fxevent
+      tools/analysis/passes/allfxevents/testdata/src/b
+      tools/analysis/passes/allfxevents/testdata/src/go.uber.org/fx/fxevent
+      tools/cmd/fxlint
+  - unreachable:
+      docs/ex/annotate
+      docs/ex/annotate/github
+      docs/ex/get-started/01-minimal
+      docs/ex/get-started/02-http-server
+      docs/ex/get-started/03-echo-handler
+      docs/ex/get-started/04-logger
+      docs/ex/get-started/05-registration
+      docs/ex/get-started/06-another-handler
+      docs/ex/get-started/07-many-handlers
+      docs/ex/modules
+      docs/ex/parameter-objects
+      docs/ex/result-objects
+      docs/ex/value-groups/consume
+      docs/ex/value-groups/feed
+      docs/internal/apptest
+      docs/internal/exectest
+      docs/internal/httptest
+      docs/internal/iotest
+      docs/internal/test
+      fxtest
+      internal/e2e/shutdowner_run_exitcode
+      internal/e2e/shutdowner_wait_exitcode
+      internal/fxlog/foovendor
+      internal/fxlog/sample.git
+      internal/testutil
+      tools/analysis/passes/allfxevents
+      tools/analysis/passes/allfxevents/testdata/src/a
+      tools/analysis/passes/allfxevents/testdata/src/b/fxevent
+      tools/analysis/passes/allfxevents/testdata/src/b
+      tools/analysis/passes/allfxevents/testdata/src/go.uber.org/fx/fxevent
+      tools/cmd/fxlint

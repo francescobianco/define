@@ -44,7 +44,8 @@ func ExtractGoPackages(rootDir string, ignoreTests bool) (*GoResult, error) {
 		}
 		if d.IsDir() {
 			name := d.Name()
-			if name == "vendor" || (name != "." && strings.HasPrefix(name, ".")) {
+			// Skip vendor, hidden dirs, and _-prefixed dirs (ignored by Go build)
+			if name == "vendor" || (name != "." && (strings.HasPrefix(name, ".") || strings.HasPrefix(name, "_"))) {
 				return filepath.SkipDir
 			}
 			return nil
@@ -122,17 +123,13 @@ func ExtractGoPackages(rootDir string, ignoreTests bool) (*GoResult, error) {
 }
 
 // dirToConceptName maps a relative directory to a DSL concept name.
-// For root (.): use the Go package name (usually "main").
-// For internal/*: keep the full relative path to preserve context.
-// For top-level dirs (cmd, pkg, ...): use the Go package name.
+// Root package uses the Go package name (e.g. "main", "gin", "chi").
+// Every other directory uses its full relative path — always unique.
 func dirToConceptName(relDir, goPkgName string) string {
 	if relDir == "." || relDir == "" {
 		return goPkgName
 	}
-	if strings.HasPrefix(relDir, "internal/") {
-		return relDir
-	}
-	return goPkgName
+	return relDir
 }
 
 func isInternalImport(importPath, module string) bool {

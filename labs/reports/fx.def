@@ -1,0 +1,39 @@
+# extracted by: define extract labs/repos/fx --config labs/profiles/go-generic.yml
+
+define fx with internal/fxreflect, fxevent, internal/fxclock, internal/fxlog, internal/lifecycle
+define docs/ex/annotate with fx, docs/ex/annotate/github
+define docs/ex/annotate/github
+define docs/ex/get-started/01-minimal with fx
+define docs/ex/get-started/02-http-server with fx
+define docs/ex/get-started/03-echo-handler with fx
+define docs/ex/get-started/04-logger with fx, fxevent
+define docs/ex/get-started/05-registration with fx, fxevent
+define docs/ex/get-started/06-another-handler with fx, fxevent
+define docs/ex/get-started/07-many-handlers with fx, fxevent
+define docs/ex/modules with fx
+define docs/ex/parameter-objects with fx
+define docs/ex/result-objects with fx
+define docs/ex/value-groups/consume with fx
+define docs/ex/value-groups/feed with fx
+define docs/internal/apptest with docs/internal/exectest, docs/internal/test
+define docs/internal/exectest with docs/internal/test
+define docs/internal/httptest with docs/internal/iotest, docs/internal/test
+define docs/internal/iotest with docs/internal/test
+define docs/internal/test
+define fxevent
+define fxtest with fx, internal/fxclock, internal/fxlog, internal/lifecycle, internal/testutil, fxevent
+define internal/e2e/shutdowner_run_exitcode with fx
+define internal/e2e/shutdowner_wait_exitcode with fx
+define internal/fxclock
+define internal/fxlog with fxevent
+define internal/fxlog/foovendor
+define internal/fxlog/sample.git
+define internal/fxreflect
+define internal/lifecycle with fxevent, internal/fxclock, internal/fxreflect
+define internal/testutil
+define tools/analysis/passes/allfxevents
+define tools/analysis/passes/allfxevents/testdata/src/a with fxevent
+define tools/analysis/passes/allfxevents/testdata/src/b/fxevent
+define tools/analysis/passes/allfxevents/testdata/src/b
+define tools/analysis/passes/allfxevents/testdata/src/go.uber.org/fx/fxevent
+define tools/cmd/fxlint with tools/analysis/passes/allfxevents

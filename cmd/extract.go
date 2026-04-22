@@ -15,14 +15,24 @@ import (
 
 var extractCmd = &cobra.Command{
 	Use:   "extract <dir>",
-	Short: "Extract a .def model from Go source code",
-	Args:  cobra.ExactArgs(1),
-	RunE:  runExtract,
+	Short: "Extract a .def model from source code",
+	Long: `Extract a structural model from a codebase directory.
+
+The --config flag points to a define.yml profile that lives outside the
+codebase, so experiments never touch the upstream source tree.
+
+Examples:
+  define extract ./src
+  define extract labs/repos/gin --config labs/profiles/go-generic.yml -o labs/reports/gin.def
+  define extract labs/repos/laravel --config labs/profiles/php-laravel.yml`,
+	Args: cobra.ExactArgs(1),
+	RunE: runExtract,
 }
 
 func init() {
+	extractCmd.Flags().StringP("config", "c", "", "profile file (define.yml) — overrides auto-detection")
 	extractCmd.Flags().StringP("out", "o", "", "write .def to file instead of stdout")
-	extractCmd.Flags().Bool("no-tests", true, "ignore *_test.go files")
+	extractCmd.Flags().Bool("no-tests", true, "ignore test files (*_test.go, *.spec.ts, *Test.php, …)")
 	extractCmd.Flags().Bool("check", false, "run verification after extraction")
 	rootCmd.AddCommand(extractCmd)
 }
@@ -30,19 +40,29 @@ func init() {
 func runExtract(cmd *cobra.Command, args []string) error {
 	dir := args[0]
 	outFile, _ := cmd.Flags().GetString("out")
+	cfgFile, _ := cmd.Flags().GetString("config")
 	noTests, _ := cmd.Flags().GetBool("no-tests")
 	doCheck, _ := cmd.Flags().GetBool("check")
 
-	result, err := extractor.ExtractGoPackages(dir, noTests)
+	cfg, err := extractor.LoadConfig(dir, cfgFile)
+	if err != nil {
+		return fmt.Errorf("config: %w", err)
+	}
+
+	result, err := extractor.Extract(dir, cfg, noTests)
 	if err != nil {
 		return fmt.Errorf("extraction failed: %w", err)
 	}
 	if len(result.Packages) == 0 {
-		return fmt.Errorf("no Go packages found in %s", dir)
+		return fmt.Errorf("no concepts found in %s (language: %s)", dir, cfg.Language)
 	}
 
+	header := "# extracted by: define extract " + dir
+	if cfgFile != "" {
+		header += " --config " + cfgFile
+	}
 	var sb strings.Builder
-	sb.WriteString("# extracted by: define extract " + dir + "\n\n")
+	sb.WriteString(header + "\n\n")
 	for _, pkg := range result.Packages {
 		sb.WriteString("define " + pkg.ConceptName)
 		if len(pkg.Deps) > 0 {

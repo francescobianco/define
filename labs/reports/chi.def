@@ -1,0 +1,4 @@
+# extracted by: define extract labs/repos/chi --config labs/profiles/go-generic.yml
+
+define chi
+define middleware with chi

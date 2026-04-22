@@ -1,0 +1,88 @@
+watermill is closed
+
+Coverage:
+  - declared:  31
+  - reachable: 1
+  - invoked:   0
+
+Dead concepts:
+  - never referenced:
+      components/fanin
+      components/forwarder
+      components/metrics
+      components/requestreply
+      components/requeuer
+      dev/consolidate-gomods
+      dev/update-examples-deps
+      dev/validate-examples
+      docs/content/docs/message
+      docs/content/docs/snippets/amqp-consumer-groups
+      docs/content/docs/snippets/tail-log-file
+      internal/publisher
+      pubsub
+      pubsub/gochannel
+      pubsub/tests
+      tools/mill
+      tools/pq
+  - never invoked:
+      components/cqrs
+      components/delay
+      components/fanin
+      components/forwarder
+      components/metrics
+      components/requestreply
+      components/requeuer
+      dev/consolidate-gomods
+      dev/update-examples-deps
+      dev/validate-examples
+      docs/content/docs/message
+      docs/content/docs/snippets/amqp-consumer-groups
+      docs/content/docs/snippets/tail-log-file
+      internal
+      internal/publisher
+      internal/subscriber
+      message
+      message/router/middleware
+      message/router/plugin
+      message/subscriber
+      pubsub
+      pubsub/gochannel
+      pubsub/sync
+      pubsub/tests
+      tools/mill/cmd
+      tools/mill/cmd/internal
+      tools/mill
+      tools/pq/backend
+      tools/pq/cli
+      tools/pq
+  - unreachable:
+      components/cqrs
+      components/delay
+      components/fanin
+      components/forwarder
+      components/metrics
+      components/requestreply
+      components/requeuer
+      dev/consolidate-gomods
+      dev/update-examples-deps
+      dev/validate-examples
+      docs/content/docs/message
+      docs/content/docs/snippets/amqp-consumer-groups
+      docs/content/docs/snippets/tail-log-file
+      internal
+      internal/publisher
+      internal/subscriber
+      message
+      message/router/middleware
+      message/router/plugin
+      message/subscriber
+      pubsub
+      pubsub/gochannel
+      pubsub/sync
+      pubsub/tests
+      tools/mill/cmd
+      tools/mill/cmd/internal
+      tools/mill
+      tools/pq/backend
+      tools/pq/cli
+      tools/pq

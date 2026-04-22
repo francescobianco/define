@@ -1,0 +1,25 @@
+language: php
+
+sources:
+  - "app/**/*.php"
+  - "src/**/*.php"
+
+ignore:
+  - "**/*Test.php"
+  - "**/*test.php"
+  - vendor/**
+
+concepts:
+  class:
+    # each PHP class/interface/trait = one concept
+    naming: namespace   # use fully-qualified class name
+
+relations:
+  with:
+    from: constructor_injection   # __construct(TypeHint $dep)
+    also: use_statements          # use App\Services\Foo
+
+  invoke:
+    from: method_calls            # $this->dep->method()
+
+# Planned for v0.2

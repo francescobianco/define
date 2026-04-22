@@ -1,0 +1,14 @@
+chi is closed
+
+Coverage:
+  - declared:  2
+  - reachable: 1
+  - invoked:   0
+
+Dead concepts:
+  - never referenced:
+      middleware
+  - never invoked:
+      middleware
+  - unreachable:
+      middleware

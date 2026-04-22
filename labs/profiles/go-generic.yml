@@ -1,0 +1,21 @@
+language: go
+
+sources:
+  - "**/*.go"
+
+ignore:
+  - "**/*_test.go"
+  - vendor/**
+  - "**/*.pb.go"
+
+concepts:
+  package:
+    # each Go package directory = one concept
+    # internal/* keeps full path as concept name
+
+relations:
+  with:
+    from: imports
+
+  invoke:
+    from: function_calls   # v0.2

@@ -1,0 +1,22 @@
+gin is closed
+
+Coverage:
+  - declared:  8
+  - reachable: 6
+  - invoked:   0
+
+Dead concepts:
+  - never referenced:
+      ginS
+      testdata/protoexample
+  - never invoked:
+      binding
+      codec/json
+      ginS
+      internal/bytesconv
+      internal/fs
+      render
+      testdata/protoexample
+  - unreachable:
+      ginS
+      testdata/protoexample
