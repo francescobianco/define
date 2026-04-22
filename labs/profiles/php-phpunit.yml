@@ -1,0 +1,14 @@
+language: php
+namespace_strip: PHPUnit
+root: TextUI/Application
+
+# Library only — tests excluded.
+# Expected result: many assertion/framework classes are "never referenced"
+# because the library declares them for consumers but doesn't consume them itself.
+
+sources:
+  - "src/**/*.php"
+
+ignore:
+  - "tests/**"
+  - "vendor/**"

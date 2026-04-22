@@ -9,9 +9,12 @@ import (
 )
 
 type Config struct {
-	Language string   `yaml:"language"`
-	Sources  []string `yaml:"sources"`
-	Ignore   []string `yaml:"ignore"`
+	Language       string   `yaml:"language"`
+	Sources        []string `yaml:"sources"`
+	Ignore         []string `yaml:"ignore"`
+	IncludeTests   bool     `yaml:"include_tests"`   // override --no-tests: always include test files
+	NamespaceStrip string   `yaml:"namespace_strip"` // strip common prefix from concept names
+	Root           string   `yaml:"root"`            // explicit root concept for reachability analysis
 }
 
 // LoadConfig reads the profile file. If cfgFile is empty it looks for

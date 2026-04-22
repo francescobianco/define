@@ -1,0 +1,13 @@
+language: php
+namespace_strip: PHPUnit
+include_tests: true
+root: TextUI/Application
+
+# Library + its own test suite.
+# Expected result: classes that appeared "dead" without tests are now
+# referenced and reachable — the tests are the real consumers of the library API.
+# This demonstrates the library pattern: "we declare for others, others consume."
+
+sources:
+  - "src/**/*.php"
+  - "tests/**/*.php"

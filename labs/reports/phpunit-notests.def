@@ -1,0 +1,993 @@
+# extracted by: define extract labs/repos/phpunit --config labs/profiles/php-phpunit.yml
+
+define TestFixture/MyExtension/MyExtensionBootstrap with TextUI/Configuration/Configuration, Runner/Extension/Extension, Runner/Extension/Facade, Runner/Extension/ParameterCollection
+define Event/is with Runner/DeprecationCollector/Facade, Runner/DeprecationCollector/TestTriggeredDeprecationSubscriber, Event/Code/ComparisonFailure, Metadata/IgnorePhpunitWarnings, TextUI/Configuration/Configuration, Event/Code/ClassMethod, Event/Code/Throwable, Event/TestSuite/Loaded, Event/TestSuite/Skipped, Event/TestSuite/Sorted, Metadata/Parser/Registry, Event/TestSuite/Filtered, Framework/TestCase, Event/Code/NoTestCaseObjectOnCallStackException, Event/TestSuite/Finished, Event/TestSuite/Started, Event/TestSuite/TestSuite, Event/Telemetry/HRTime, Event/Telemetry/SystemGarbageCollectorStatusProvider
+define Event/CollectingDispatcher with Runner/DeprecationCollector/Facade, Runner/DeprecationCollector/TestTriggeredDeprecationSubscriber, Event/Dispatcher
+define Event/DeferringDispatcher with Event/SubscribableDispatcher
+define Event/DirectDispatcher with Event/SubscribableDispatcher
+define Event/Dispatcher
+define Event/SubscribableDispatcher with Event/Dispatcher
+define Event/DispatchingEmitter with Event/TestSuite/Finished, Event/TestSuite/Started, Event/TestSuite/TestSuite, Event/Code/ClassMethod, Event/Code/ComparisonFailure, Metadata/IgnorePhpunitWarnings, TextUI/Configuration/Configuration, Event/Code/Throwable, Event/TestSuite/Loaded, Event/TestSuite/Skipped, Event/TestSuite/Sorted, Metadata/Parser/Registry, Event/Code/NoTestCaseObjectOnCallStackException, Event/TestSuite/Filtered, Framework/TestCase, Event/Emitter
+define Event/Emitter with Event/TestSuite/TestSuite, TextUI/Configuration/Configuration, Event/Code/ClassMethod, Event/Code/ComparisonFailure, Event/Code/Throwable, Framework/TestCase
+define Event/Application/Finished with Event/Event
+define Event/Application/FinishedSubscriber with Event/Subscriber
+define Event/Application/Started with Event/Runtime/Runtime, Event/Event
+define Event/Application/StartedSubscriber with Event/Subscriber
+define Event/Event
+define Event/EventCollection
+define Event/EventCollectionIterator
+define Event/TestRunner/BootstrapFinished with Event/Event
+define Event/TestRunner/BootstrapFinishedSubscriber with Event/Subscriber
+define Event/TestRunner/ChildProcessErrored with Event/Event
+define Event/TestRunner/ChildProcessErroredSubscriber with Event/Subscriber
+define Event/TestRunner/ChildProcessFinished with Event/Event
+define Event/TestRunner/ChildProcessFinishedSubscriber with Event/Subscriber
+define Event/TestRunner/ChildProcessStarted with Event/Event
+define Event/TestRunner/ChildProcessStartedSubscriber with Event/Subscriber
+define Event/TestRunner/Configured with Event/Event, TextUI/Configuration/Configuration
+define Event/TestRunner/ConfiguredSubscriber with Event/Subscriber
+define Event/TestRunner/will with Event/Event, Event/Subscriber
+define Event/TestRunner/DeprecationTriggered with Event/Event
+define Event/TestRunner/DeprecationTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/ErrorTriggered with Event/Event
+define Event/TestRunner/ErrorTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/EventFacadeSealed with Event/Event
+define Event/TestRunner/EventFacadeSealedSubscriber with Event/Subscriber
+define Event/TestRunner/ExecutionAborted with Event/Event
+define Event/TestRunner/ExecutionAbortedSubscriber with Event/Subscriber
+define Event/TestRunner/ExecutionFinished with Event/Event
+define Event/TestRunner/ExecutionFinishedSubscriber with Event/Subscriber
+define Event/TestRunner/ExecutionStarted with Event/Event, Event/TestSuite/TestSuite
+define Event/TestRunner/ExecutionStartedSubscriber with Event/Subscriber
+define Event/TestRunner/ExtensionBootstrapped with Event/Event
+define Event/TestRunner/ExtensionBootstrappedSubscriber with Event/Subscriber
+define Event/TestRunner/ExtensionLoadedFromPhar with Event/Event
+define Event/TestRunner/ExtensionLoadedFromPharSubscriber with Event/Subscriber
+define Event/TestRunner/Finished with Event/Event
+define Event/TestRunner/FinishedSubscriber with Event/Subscriber
+define Event/TestRunner/GarbageCollectionDisabled with Event/Event
+define Event/TestRunner/GarbageCollectionDisabledSubscriber with Event/Subscriber
+define Event/TestRunner/GarbageCollectionEnabled with Event/Event
+define Event/TestRunner/GarbageCollectionEnabledSubscriber with Event/Subscriber
+define Event/TestRunner/GarbageCollectionTriggered with Event/Event
+define Event/TestRunner/GarbageCollectionTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/Issue/will with Event/Event, Event/Subscriber
+define Event/TestRunner/Issue/DeprecationTriggered with Event/Event
+define Event/TestRunner/Issue/DeprecationTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/Issue/NoticeTriggered with Event/Event
+define Event/TestRunner/Issue/NoticeTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/Issue/WarningTriggered with Event/Event
+define Event/TestRunner/Issue/WarningTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/NoticeTriggered with Event/Event
+define Event/TestRunner/NoticeTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/PhpDeprecationTriggered with Event/Event
+define Event/TestRunner/PhpDeprecationTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/PhpNoticeTriggered with Event/Event
+define Event/TestRunner/PhpNoticeTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/PhpWarningTriggered with Event/Event
+define Event/TestRunner/PhpWarningTriggeredSubscriber with Event/Subscriber
+define Event/TestRunner/Started with Event/Event
+define Event/TestRunner/StartedSubscriber with Event/Subscriber
+define Event/TestRunner/StaticAnalysisForCodeCoverageFinished with Event/Event
+define Event/TestRunner/StaticAnalysisForCodeCoverageFinishedSubscriber with Event/Subscriber
+define Event/TestRunner/StaticAnalysisForCodeCoverageStarted with Event/Event
+define Event/TestRunner/StaticAnalysisForCodeCoverageStartedSubscriber with Event/Subscriber
+define Event/TestRunner/WarningTriggered with Event/Event
+define Event/TestRunner/WarningTriggeredSubscriber with Event/Subscriber
+define Event/TestSuite/Filtered with Event/Event
+define Event/TestSuite/FilteredSubscriber with Event/Subscriber
+define Event/TestSuite/Finished with Event/Event
+define Event/TestSuite/FinishedSubscriber with Event/Subscriber
+define Event/TestSuite/Loaded with Event/Event
+define Event/TestSuite/LoadedSubscriber with Event/Subscriber
+define Event/TestSuite/Skipped with Event/Event
+define Event/TestSuite/SkippedSubscriber with Event/Subscriber
+define Event/TestSuite/Sorted with Event/Event
+define Event/TestSuite/SortedSubscriber with Event/Subscriber
+define Event/TestSuite/Started with Event/Event
+define Event/TestSuite/StartedSubscriber with Event/Subscriber
+define Event/EventAlreadyAssignedException with Event/Exception
+define Event/EventFacadeIsSealedException with Event/Exception
+define Event/Exception with Exception
+define Event/InvalidArgumentException with Event/Exception
+define Event/InvalidEventException with Event/Exception
+define Event/InvalidSubscriberException with Event/Exception
+define Event/MapError with Event/Exception
+define Event/Test/NoComparisonFailureException with Event/Exception
+define Event/TestData/NoDataSetFromDataProviderException with Event/Exception
+define Event/NoPreviousThrowableException with Event/Exception
+define Event/Code/is with Event/Exception, Framework/ExpectationFailedException, Framework/Exception, Util/Filter, Util/ThrowableToStringMapper, Event/NoPreviousThrowableException
+define Event/Code/NoTestCaseObjectOnCallStackException with Event/Exception
+define Event/RuntimeException with Event/Exception
+define Event/SubscriberTypeAlreadyRegisteredException with Event/Exception
+define Event/UnknownEventException with Event/Exception
+define Event/UnknownEventTypeException with Event/Exception
+define Event/UnknownSubscriberException with Event/Exception
+define Event/UnknownSubscriberTypeException with Event/Exception
+define Event/Facade with Event/Telemetry/HRTime, Event/Telemetry/SystemGarbageCollectorStatusProvider, Runner/DeprecationCollector/Facade
+define Event/Subscriber
+define Event/Tracer/Tracer with Event/Event
+define Event/TypeMap
+define Event/Code/ClassMethod
+define Event/Code/ComparisonFailure
+define Event/Code/ComparisonFailureBuilder with Framework/ExpectationFailedException
+define Event/Runtime/OperatingSystem
+define Event/Runtime/PHP
+define Event/Runtime/PHPUnit with Runner/Version
+define Event/Runtime/Runtime
+define Event/Telemetry/Duration with Event/InvalidArgumentException
+define Event/Telemetry/GarbageCollectorStatus
+define Event/Telemetry/is with Event/InvalidArgumentException
+define Event/Telemetry/GarbageCollectorStatusProvider
+define Event/Telemetry/HRTime with Event/InvalidArgumentException
+define Event/Telemetry/Info
+define Event/Telemetry/MemoryMeter
+define Event/Telemetry/MemoryUsage
+define Event/Telemetry/Snapshot
+define Event/Telemetry/StopWatch
+define Event/Telemetry/System
+define Event/Telemetry/SystemGarbageCollectorStatusProvider with Event/Telemetry/GarbageCollectorStatusProvider
+define Event/Telemetry/SystemMemoryMeter with Event/Telemetry/MemoryMeter
+define Event/Telemetry/SystemStopWatch with Event/InvalidArgumentException, Event/Telemetry/StopWatch
+define Event/Telemetry/SystemStopWatchWithOffset with Event/InvalidArgumentException, Event/Telemetry/StopWatch
+define Event/TestSuite/TestSuite
+define Event/TestSuite/is with Event/RuntimeException, Framework/DataProviderTestSuite, Runner/Phpt/TestCase, Framework/TestSuite
+define Event/TestSuite/TestSuiteBuilder with Event/RuntimeException, Framework/DataProviderTestSuite, Runner/Phpt/TestCase, Framework/TestSuite
+define Event/TestSuite/TestSuiteForTestClass with Event/TestSuite/TestSuite
+define Event/TestSuite/TestSuiteForTestMethodWithDataProvider with Event/TestSuite/TestSuite
+define Event/TestSuite/TestSuiteWithName with Event/TestSuite/TestSuite
+define Event/Code/Throwable with Event/NoPreviousThrowableException
+define Event/Code/ThrowableBuilder with Event/NoPreviousThrowableException, Framework/Exception, Util/Filter, Util/ThrowableToStringMapper
+define Exception
+define Framework/or with Framework/Constraint/IsFinite, Framework/Constraint/LogicalXor, Framework/Constraint/TraversableContainsEqual, Framework/Constraint/StringEndsWith, Framework/MockObject/Stub/Exception, Framework/Constraint/ArrayHasKey, Framework/Constraint/IsEqualCanonicalizing, Framework/Constraint/IsFalse, Framework/Constraint/IsReadable, Framework/Constraint/StringContains, Event/Facade, Framework/Constraint/DirectoryExists, Framework/Constraint/IsInfinite, Framework/Constraint/LogicalOr, Framework/Constraint/StringEqualsStringIgnoringWhitespace, Framework/Constraint/TraversableContainsOnly, Framework/MockObject/Rule/InvokedAtLeastOnce, Framework/Constraint/FileExists, Framework/Constraint/IsEmpty, Framework/Constraint/IsInstanceOf, Util/Xml/XmlException, Framework/Constraint/Callback, Framework/Constraint/IsIdentical, Framework/Constraint/IsTrue, Framework/Constraint/LessThan, Framework/Constraint/LogicalNot, Framework/MockObject/Rule/InvokedAtLeastCount, Framework/Constraint/Constraint, Framework/Constraint/GreaterThan, Framework/Constraint/IsJson, Framework/Constraint/IsNan, Framework/Constraint/IsType, Framework/Constraint/StringEqualsStringIgnoringLineEndings, Framework/Constraint/StringMatchesFormatDescription, Framework/Constraint/ObjectEquals, Framework/Constraint/RegularExpression, Framework/Constraint/IsEqual, Framework/Constraint/IsEqualIgnoringCase, Framework/Constraint/Count, Framework/Constraint/StringStartsWith, Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/Rule/InvokedCount, Framework/Constraint/IsAnything, Framework/Constraint/IsList, Framework/Constraint/IsNull, Framework/Constraint/IsWritable, Framework/Constraint/LogicalAnd, Framework/Constraint/TraversableContainsIdentical, Framework/MockObject/Rule/InvokedAtMostCount, Framework/Constraint/IsEqualWithDelta, Util/Xml/Loader, Framework/Constraint/ArraysAreEqual, Framework/Constraint/ObjectHasProperty, Framework/Constraint/SameSize, Framework/Constraint/JsonMatches, Framework/Constraint/ArraysAreIdentical, Framework/Constraint/ExceptionCode, Framework/MockObject/MockBuilder, TextUI/Configuration/Registry, Runner/DeprecationCollector/Facade, Runner/ShutdownHandler, Framework/Constraint/ExceptionMessageMatchesRegularExpression, Framework/MockObject/MockObject, Metadata/Api/HookMethods, Framework/Constraint/ExceptionMessageIs, Framework/Constraint/ExceptionMessageIsOrContains, Framework/MockObject/TestStubBuilder, Event/NoPreviousThrowableException, Metadata/Api/Requirements, Framework/TestStatus/TestStatus, TestRunner/TestResult/PassedTests, Util/Test, Metadata/WithEnvironmentVariable, Framework/MockObject/Generator/Generator, Metadata/Api/Groups, Runner/BackedUpEnvironmentVariable, Framework/MockObject/Stub, Framework/TestSize/TestSize, Runner/HookMethodCollection, Util/Exporter, Framework/MockObject/MockObjectInternal, Runner/ErrorHandler, Util/DifferBuilder
+define Framework/name with Framework/Constraint/IsEqualCanonicalizing, Framework/Constraint/IsFalse, Framework/Constraint/IsReadable, Framework/Constraint/StringContains, Framework/Constraint/TraversableContainsOnly, Event/Facade, Framework/Constraint/DirectoryExists, Framework/Constraint/IsInfinite, Framework/Constraint/LogicalOr, Framework/Constraint/StringEqualsStringIgnoringWhitespace, Framework/MockObject/Rule/InvokedAtLeastOnce, Framework/Constraint/FileExists, Framework/Constraint/IsEmpty, Framework/Constraint/IsInstanceOf, Util/Xml/XmlException, Framework/Constraint/LogicalNot, Framework/MockObject/Rule/InvokedAtLeastCount, Framework/Constraint/Callback, Framework/Constraint/IsIdentical, Framework/Constraint/IsTrue, Framework/Constraint/LessThan, Framework/Constraint/IsType, Framework/Constraint/StringEqualsStringIgnoringLineEndings, Framework/Constraint/Constraint, Framework/Constraint/GreaterThan, Framework/Constraint/IsJson, Framework/Constraint/IsNan, Framework/Constraint/StringMatchesFormatDescription, Framework/Constraint/ObjectEquals, Framework/Constraint/RegularExpression, Framework/Constraint/IsEqual, Framework/Constraint/IsEqualIgnoringCase, Framework/Constraint/StringStartsWith, Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/Rule/InvokedCount, Framework/Constraint/Count, Framework/Constraint/TraversableContainsIdentical, Framework/MockObject/Rule/InvokedAtMostCount, Framework/Constraint/IsAnything, Framework/Constraint/IsList, Framework/Constraint/IsNull, Framework/Constraint/IsWritable, Framework/Constraint/LogicalAnd, Framework/Constraint/IsEqualWithDelta, Framework/Constraint/IsFinite, Framework/Constraint/LogicalXor, Framework/Constraint/TraversableContainsEqual, Framework/Constraint/StringEndsWith, Framework/MockObject/Stub/Exception, Framework/Constraint/ArrayHasKey, Util/Xml/Loader, Framework/Constraint/ArraysAreEqual, Framework/Constraint/SameSize, Framework/Constraint/ObjectHasProperty, Framework/Constraint/ArraysAreIdentical, Framework/Constraint/JsonMatches
+define Framework/Assert with Framework/Constraint/IsFinite, Framework/Constraint/IsInstanceOf, Framework/Constraint/IsJson, Framework/Constraint/IsNan, Framework/Constraint/RegularExpression, Framework/Constraint/FileExists, Framework/Constraint/Count, Framework/Constraint/GreaterThan, Framework/Constraint/IsEqualWithDelta, Framework/Constraint/IsIdentical, Framework/Constraint/IsReadable, Framework/Constraint/IsTrue, Framework/Constraint/ArraysAreEqual, Framework/Constraint/StringStartsWith, Framework/Constraint/TraversableContainsEqual, Util/Xml/XmlException, Framework/Constraint/LessThan, Framework/Constraint/StringEqualsStringIgnoringLineEndings, Framework/Constraint/IsWritable, Framework/Constraint/LogicalOr, Framework/Constraint/StringEqualsStringIgnoringWhitespace, Framework/Constraint/TraversableContainsIdentical, Framework/Constraint/IsNull, Framework/Constraint/StringContains, Framework/Constraint/StringMatchesFormatDescription, Framework/Constraint/IsEqualIgnoringCase, Framework/Constraint/ObjectEquals, Framework/Constraint/IsEqual, Framework/Constraint/IsType, Framework/Constraint/LogicalAnd, Framework/Constraint/ObjectHasProperty, Framework/Constraint/SameSize, Framework/Constraint/TraversableContainsOnly, Framework/Constraint/Callback, Framework/Constraint/IsEmpty, Framework/Constraint/IsFalse, Framework/Constraint/JsonMatches, Framework/Constraint/LogicalNot, Framework/Constraint/LogicalXor, Framework/Constraint/StringEndsWith, Framework/Constraint/ArraysAreIdentical, Framework/Constraint/IsAnything, Framework/Constraint/IsInfinite, Framework/Constraint/IsList, Framework/Constraint/ArrayHasKey, Framework/Constraint/Constraint, Util/Xml/Loader, Framework/Constraint/DirectoryExists, Framework/Constraint/IsEqualCanonicalizing
+define Framework/Attributes/After
+define Framework/Attributes/AfterClass
+define Framework/Attributes/AllowMockObjectsWithoutExpectations
+define Framework/Attributes/BackupGlobals
+define Framework/Attributes/BackupStaticProperties
+define Framework/Attributes/Before
+define Framework/Attributes/BeforeClass
+define Framework/Attributes/CoversClass
+define Framework/Attributes/CoversClassesThatExtendClass
+define Framework/Attributes/CoversClassesThatImplementInterface
+define Framework/Attributes/CoversFunction
+define Framework/Attributes/CoversMethod
+define Framework/Attributes/CoversNamespace
+define Framework/Attributes/CoversNothing
+define Framework/Attributes/CoversTrait
+define Framework/Attributes/DataProvider
+define Framework/Attributes/DataProviderClosure
+define Framework/Attributes/DataProviderExternal
+define Framework/Attributes/Depends
+define Framework/Attributes/DependsExternal
+define Framework/Attributes/DependsExternalUsingDeepClone
+define Framework/Attributes/DependsExternalUsingShallowClone
+define Framework/Attributes/DependsOnClass
+define Framework/Attributes/DependsOnClassUsingDeepClone
+define Framework/Attributes/DependsOnClassUsingShallowClone
+define Framework/Attributes/DependsUsingDeepClone
+define Framework/Attributes/DependsUsingShallowClone
+define Framework/Attributes/DisableReturnValueGenerationForTestDoubles
+define Framework/Attributes/DoesNotPerformAssertions
+define Framework/Attributes/ExcludeGlobalVariableFromBackup
+define Framework/Attributes/ExcludeStaticPropertyFromBackup
+define Framework/Attributes/Group
+define Framework/Attributes/IgnoreDeprecations
+define Framework/Attributes/is
+define Framework/Attributes/IgnorePhpunitDeprecations
+define Framework/Attributes/IgnorePhpunitWarnings
+define Framework/Attributes/Large
+define Framework/Attributes/Medium
+define Framework/Attributes/PostCondition
+define Framework/Attributes/PreCondition
+define Framework/Attributes/PreserveGlobalState
+define Framework/Attributes/RequiresEnvironmentVariable
+define Framework/Attributes/RequiresFunction
+define Framework/Attributes/RequiresMethod
+define Framework/Attributes/RequiresOperatingSystem
+define Framework/Attributes/RequiresOperatingSystemFamily
+define Framework/Attributes/RequiresPhp
+define Framework/Attributes/RequiresPhpExtension
+define Framework/Attributes/RequiresPhpunit
+define Framework/Attributes/RequiresPhpunitExtension with Runner/Extension/Extension
+define Framework/Attributes/RequiresSetting
+define Framework/Attributes/RunInSeparateProcess
+define Framework/Attributes/RunTestsInSeparateProcesses
+define Framework/Attributes/Small
+define Framework/Attributes/Test
+define Framework/Attributes/TestDox
+define Framework/Attributes/TestDoxFormatter
+define Framework/Attributes/TestDoxFormatterExternal
+define Framework/Attributes/TestWith
+define Framework/Attributes/TestWithJson
+define Framework/Attributes/Ticket
+define Framework/Attributes/UsesClass
+define Framework/Attributes/UsesClassesThatExtendClass
+define Framework/Attributes/UsesClassesThatImplementInterface
+define Framework/Attributes/UsesFunction
+define Framework/Attributes/UsesMethod
+define Framework/Attributes/UsesNamespace
+define Framework/Attributes/UsesTrait
+define Framework/Attributes/WithEnvironmentVariable
+define Framework/Attributes/WithoutErrorHandler
+define Framework/Constraint/ArrayComparison with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ArrayHasKey with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ArraysAreEqual with Framework/Constraint/ArrayComparison
+define Framework/Constraint/ArraysAreIdentical with Framework/Constraint/ArrayComparison
+define Framework/Constraint/IsList with Framework/Constraint/Constraint
+define Framework/Constraint/IsFalse with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsTrue with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/Callback with Framework/Constraint/Constraint
+define Framework/Constraint/Count with Framework/Exception, Framework/GeneratorNotSupportedException, Framework/Constraint/Constraint
+define Framework/Constraint/GreaterThan with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsEmpty with Framework/Constraint/Constraint
+define Framework/Constraint/LessThan with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/SameSize with Framework/Exception, Framework/Constraint/Count
+define Framework/Constraint/Constraint with Util/Exporter, Framework/Assert, Framework/ExpectationFailedException, Framework/SelfDescribing
+define Framework/Constraint/created with Framework/SelfDescribing, Util/Exporter, Framework/Assert, Framework/ExpectationFailedException
+define Framework/Constraint/IsEqual with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsEqualCanonicalizing with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsEqualIgnoringCase with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsEqualWithDelta with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/is with Util/Filter, Util/Exporter
+define Framework/Constraint/Exception with Util/Filter, Framework/Constraint/Constraint
+define Framework/Constraint/ExceptionCode with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ExceptionMessageIs with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ExceptionMessageIsOrContains with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ExceptionMessageMatchesRegularExpression with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/DirectoryExists with Framework/Constraint/Constraint
+define Framework/Constraint/FileExists with Framework/Constraint/Constraint
+define Framework/Constraint/IsReadable with Framework/Constraint/Constraint
+define Framework/Constraint/IsWritable with Framework/Constraint/Constraint
+define Framework/Constraint/IsAnything with Framework/Constraint/Constraint
+define Framework/Constraint/IsIdentical with Framework/ExpectationFailedException, Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/JsonMatches with Util/Json, Framework/ExpectationFailedException, Util/InvalidJsonException, Framework/Constraint/Constraint
+define Framework/Constraint/IsFinite with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsInfinite with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsNan with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/ObjectEquals with Framework/ActualValueIsNotAnObjectException, Framework/ComparisonMethodDoesNotAcceptParameterTypeException, Framework/ComparisonMethodDoesNotDeclareBoolReturnTypeException, Framework/ComparisonMethodDoesNotDeclareExactlyOneParameterException, Framework/ComparisonMethodDoesNotDeclareParameterTypeException, Framework/ComparisonMethodDoesNotExistException, Framework/Constraint/Constraint
+define Framework/Constraint/ObjectHasProperty with Framework/Constraint/Constraint
+define Framework/Constraint/BinaryOperator with Framework/Constraint/Operator
+define Framework/Constraint/LogicalAnd with Framework/Constraint/BinaryOperator
+define Framework/Constraint/LogicalNot with Framework/ExpectationFailedException, Framework/Constraint/UnaryOperator
+define Framework/Constraint/LogicalOr with Framework/Constraint/BinaryOperator
+define Framework/Constraint/LogicalXor with Framework/ExpectationFailedException, Framework/Constraint/BinaryOperator
+define Framework/Constraint/Operator with Framework/Constraint/Constraint
+define Framework/Constraint/UnaryOperator with Framework/Constraint/Operator
+define Framework/Constraint/to
+define Framework/Constraint/IsJson with Framework/Constraint/Constraint
+define Framework/Constraint/RegularExpression with Framework/Exception, Framework/Constraint/Constraint
+define Framework/Constraint/StringContains with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/StringEndsWith with Framework/EmptyStringException, Framework/Constraint/Constraint
+define Framework/Constraint/StringEqualsStringIgnoringLineEndings with Framework/Constraint/Constraint
+define Framework/Constraint/StringEqualsStringIgnoringWhitespace with Framework/Constraint/Constraint
+define Framework/Constraint/StringMatchesFormatDescription with Framework/Exception, Util/DifferBuilder, Framework/Constraint/Constraint
+define Framework/Constraint/StringStartsWith with Framework/EmptyStringException, Framework/Constraint/Constraint
+define Framework/Constraint/TraversableContains with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/TraversableContainsEqual with Framework/Constraint/TraversableContains
+define Framework/Constraint/TraversableContainsIdentical with Framework/Constraint/TraversableContains
+define Framework/Constraint/TraversableContainsOnly with Framework/ExpectationFailedException, Framework/NativeType, Framework/Constraint/Constraint
+define Framework/Constraint/IsInstanceOf with Framework/UnknownClassOrInterfaceException, Framework/Constraint/Constraint
+define Framework/Constraint/IsNull with Util/Exporter, Framework/Constraint/Constraint
+define Framework/Constraint/IsType with Framework/NativeType, Framework/Constraint/Constraint
+define Framework/is with Framework/TestSize/TestSize, Metadata/Api/Groups, Metadata/DependsOnClass, Metadata/DependsOnMethod, Metadata/Api/DataProvider, Metadata/Api/ProvidedData, Metadata/ExcludeGlobalVariableFromBackup, Metadata/ExcludeStaticPropertyFromBackup, TextUI/Configuration/Registry, Metadata/PreserveGlobalState, Metadata/Api/Requirements, Metadata/BackupGlobals, Metadata/BackupStaticProperties, Runner/ErrorHandler, Runner/HookMethodCollection, Util/Exporter, Framework/MockObject/MockObjectInternal, Framework/MockObject/Rule/InvokedAtMostCount, Framework/MockObject/Rule/InvokedCount, Framework/MockObject/Stub, Util/DifferBuilder, Runner/ShutdownHandler, Framework/MockObject/Stub/Exception, Framework/Constraint/ExceptionCode, Framework/MockObject/MockBuilder, Runner/DeprecationCollector/Facade, Framework/Constraint/ExceptionMessageMatchesRegularExpression, Framework/MockObject/MockObject, Metadata/Api/HookMethods, Event/NoPreviousThrowableException, Framework/Constraint/ExceptionMessageIs, Framework/Constraint/ExceptionMessageIsOrContains, Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/TestStubBuilder, Framework/TestStatus/TestStatus, Metadata/WithEnvironmentVariable, TestRunner/TestResult/PassedTests, Util/Test, Runner/BackedUpEnvironmentVariable, Framework/Constraint/Constraint, Framework/MockObject/Generator/Generator, Framework/MockObject/Rule/InvokedAtLeastCount, Framework/MockObject/Rule/InvokedAtLeastOnce, TextUI/Configuration/SourceMapper, Event/Facade, Runner/CodeCoverage, Util/GlobalState, Util/PHP/Job, Util/PHP/JobRunnerRegistry, TextUI/Configuration/Configuration, Runner/Exception, Runner/Filter/Factory, TestRunner/TestResult/Facade, Util/Filter, Util/Reflection, Metadata/Api/Dependencies, Runner/TestSuiteLoader, Runner/Phpt/TestCase, Metadata/MetadataCollection
+define Framework/DataProviderTestSuite with Framework/TestSize/TestSize, Metadata/Api/Groups, Framework/TestSuite
+define Framework/AssertionFailedError with Framework/Exception, Framework/SelfDescribing
+define Framework/EmptyStringException with Framework/InvalidArgumentException
+define Framework/ErrorLogNotWritableException with Framework/Exception
+define Framework/for
+define Framework/Exception with Exception
+define Framework/ExpectationFailedException with Framework/AssertionFailedError
+define Framework/GeneratorNotSupportedException with Framework/InvalidArgumentException
+define Framework/IncompleteTest
+define Framework/IncompleteTestError with Framework/AssertionFailedError, Framework/IncompleteTest
+define Framework/InvalidArgumentException with Framework/Exception
+define Framework/InvalidDataProviderException with Framework/Exception
+define Framework/InvalidDependencyException with Framework/AssertionFailedError, Framework/SkippedTest
+define Framework/NoChildTestSuiteException with Framework/Exception
+define Framework/ActualValueIsNotAnObjectException with Framework/Exception
+define Framework/ComparisonMethodDoesNotAcceptParameterTypeException with Framework/Exception
+define Framework/ComparisonMethodDoesNotDeclareBoolReturnTypeException with Framework/Exception
+define Framework/ComparisonMethodDoesNotDeclareExactlyOneParameterException with Framework/Exception
+define Framework/ComparisonMethodDoesNotDeclareParameterTypeException with Framework/Exception
+define Framework/ComparisonMethodDoesNotExistException with Framework/Exception
+define Framework/PhptAssertionFailedError with Framework/AssertionFailedError
+define Framework/ProcessIsolationException with Framework/Exception
+define Framework/SkippedTest
+define Framework/SkippedTestSuiteError with Framework/AssertionFailedError, Framework/SkippedTest
+define Framework/SkippedWithMessageException with Framework/AssertionFailedError, Framework/SkippedTest
+define Framework/UnknownClassOrInterfaceException with Framework/InvalidArgumentException
+define Framework/UnknownNativeTypeException with Framework/InvalidArgumentException
+define Framework/ExecutionOrderDependency with Metadata/DependsOnClass, Metadata/DependsOnMethod
+define Framework/MockObject/is with Framework/InvalidArgumentException, Framework/MockObject/Stub/Exception, Framework/MockObject/Stub/ReturnArgument, Framework/MockObject/Stub/ReturnCallback, Framework/MockObject/Stub/Stub, Framework/MockObject/Stub/ReturnStub, Framework/MockObject/Stub/ReturnValueMap, Framework/Constraint/Constraint, Framework/MockObject/Runtime/PropertyHook, Framework/MockObject/Stub/ConsecutiveCalls, Framework/MockObject/Stub/ReturnReference, Framework/MockObject/Stub/ReturnSelf, Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/Rule/InvocationOrder, Util/Exporter, Framework/SelfDescribing, Framework/MockObject/Rule/InvokedCount, Framework/MockObject/Rule/MethodName, Framework/AssertionFailedError, Event/Facade, Framework/Exception, Framework/ExpectationFailedException, Framework/MockObject/Rule/InvokedAtMostCount, Framework/MockObject/Rule/ParametersRule, Util/ThrowableToStringMapper, Framework/MockObject/Rule/AnyParameters, Framework/MockObject/Generator/Generator
+define Framework/MockObject/ConfigurableMethod
+define Framework/MockObject/BadMethodCallException with Framework/MockObject/Exception
+define Framework/MockObject/CannotUseOnlyMethodsException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/Exception with Exception
+define Framework/MockObject/IncompatibleReturnValueException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MatchBuilderNotFoundException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MatcherAlreadyRegisteredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MethodCannotBeConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MethodNameAlreadyConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MethodNameNotConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MethodParametersAlreadyConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/MethodParametersAlreadyConfiguredForAnotherMatcherException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/NeverReturningMethodException with Framework/MockObject/Exception
+define Framework/MockObject/NoMoreParameterSetsConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/NoMoreReturnValuesConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/ReturnValueNotConfiguredException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/RuntimeException with Framework/MockObject/Exception
+define Framework/MockObject/TestDoubleSealedException with Framework/Exception, Framework/MockObject/Exception
+define Framework/MockObject/Generator/is with Framework/MockObject/ConfigurableMethod, Framework/MockObject/Exception, Framework/MockObject/MockObjectInternal, Framework/MockObject/Stub, Framework/MockObject/TestDoubleState, Framework/MockObject/StubApi, Framework/MockObject/DoubledCloneMethod, Framework/MockObject/Method, Framework/MockObject/MockObject, Framework/MockObject/MockObjectApi, Framework/MockObject/ProxiedCloneMethod, Framework/MockObject/StubInternal
+define Framework/MockObject/Generator/DoubledClass with Framework/MockObject/ConfigurableMethod
+define Framework/MockObject/Generator/DoubledMethod
+define Framework/MockObject/Generator/DoubledMethodSet
+define Framework/MockObject/Generator/ClassIsEnumerationException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/ClassIsFinalException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/DuplicateMethodException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/Exception with Framework/MockObject/Exception
+define Framework/MockObject/Generator/InvalidMethodNameException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/MethodNamedMethodException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/NameAlreadyInUseException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/ReflectionException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/RuntimeException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/UnknownInterfaceException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/UnknownTypeException with Framework/Exception, Framework/MockObject/Generator/Exception
+define Framework/MockObject/Generator/or
+define Framework/MockObject/Generator/Generator with Framework/MockObject/DoubledCloneMethod, Framework/MockObject/StubApi, Framework/MockObject/MockObjectApi, Framework/MockObject/ProxiedCloneMethod, Framework/MockObject/StubInternal, Framework/MockObject/Method, Framework/MockObject/MockObject, Framework/MockObject/TestDoubleState, Framework/MockObject/MockObjectInternal, Framework/MockObject/Stub, Framework/MockObject/ConfigurableMethod
+define Framework/MockObject/Generator/HookedProperty
+define Framework/MockObject/Generator/HookedPropertyGenerator
+define Framework/MockObject/Generator/TemplateLoader
+define Framework/MockObject/MockBuilder with Framework/MockObject/Generator/ClassIsFinalException, Framework/MockObject/Generator/DuplicateMethodException, Framework/MockObject/Generator/UnknownTypeException, Framework/InvalidArgumentException, Framework/MockObject/Generator/InvalidMethodNameException, Framework/MockObject/Generator/NameAlreadyInUseException, Framework/MockObject/Generator/ReflectionException, Framework/MockObject/Generator/RuntimeException, Framework/TestCase, Framework/MockObject/Generator/ClassIsEnumerationException, Framework/MockObject/TestDoubleBuilder
+define Framework/MockObject/AbstractInvocationImplementation with Framework/MockObject/Runtime/PropertyHook, Framework/MockObject/Stub/ConsecutiveCalls, Framework/MockObject/Stub/ReturnReference, Framework/MockObject/Stub/ReturnSelf, Framework/MockObject/Stub/ReturnStub, Framework/MockObject/Stub/ReturnValueMap, Framework/Constraint/Constraint, Framework/MockObject/Stub/Exception, Framework/MockObject/Stub/ReturnArgument, Framework/MockObject/Stub/ReturnCallback, Framework/MockObject/Stub/Stub, Framework/InvalidArgumentException, Framework/MockObject/InvocationStubber
+define Framework/MockObject/DoubledCloneMethod
+define Framework/MockObject/Method with Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/Runtime/PropertyHook, Framework/Constraint/Constraint
+define Framework/MockObject/MockObjectApi with Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/ProxiedCloneMethod
+define Framework/MockObject/StubApi
+define Framework/MockObject/TestDoubleState
+define Framework/MockObject/InvocationMocker with Framework/MockObject/InvocationStubber
+define Framework/MockObject/InvocationStubber with Framework/MockObject/Runtime/PropertyHook, Framework/MockObject/Stub/Stub, Framework/Constraint/Constraint
+define Framework/MockObject/MockObject with Framework/MockObject/Rule/InvocationOrder, Framework/MockObject/Stub
+define Framework/MockObject/MockObjectInternal with Framework/MockObject/MockObject
+define Framework/MockObject/Stub with Framework/MockObject/Runtime/PropertyHook, Framework/Constraint/Constraint
+define Framework/MockObject/StubInternal with Framework/MockObject/Stub
+define Framework/MockObject/Invocation with Framework/SelfDescribing, Util/Exporter
+define Framework/MockObject/InvocationHandler with Framework/MockObject/Rule/MethodName, Framework/AssertionFailedError, Framework/MockObject/Rule/InvocationOrder, Framework/MockObject/Rule/InvokedCount
+define Framework/MockObject/InvocationMockerImplementation with Event/Facade, Framework/Exception, Framework/MockObject/AbstractInvocationImplementation, Framework/MockObject/InvocationMocker
+define Framework/MockObject/InvocationStubberImplementation with Framework/MockObject/AbstractInvocationImplementation, Framework/MockObject/InvocationStubber
+define Framework/MockObject/Matcher with Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/Rule/AnyParameters, Framework/MockObject/Rule/InvokedCount, Framework/MockObject/Rule/MethodName, Framework/MockObject/Stub/Stub, Util/ThrowableToStringMapper, Framework/ExpectationFailedException, Framework/MockObject/Rule/InvocationOrder, Framework/MockObject/Rule/InvokedAtMostCount, Framework/MockObject/Rule/ParametersRule
+define Framework/MockObject/MethodNameConstraint with Framework/Constraint/Constraint
+define Framework/MockObject/Runtime/PropertyGetHook with Framework/MockObject/Runtime/PropertyHook
+define Framework/MockObject/Runtime/PropertyHook
+define Framework/MockObject/Runtime/PropertySetHook with Framework/MockObject/Runtime/PropertyHook
+define Framework/MockObject/ReturnValueGenerator with Framework/MockObject/Generator/Generator
+define Framework/MockObject/Rule/is with Framework/MockObject/Invocation, Framework/SelfDescribing, Framework/ExpectationFailedException, Framework/Constraint/Constraint, Framework/InvalidArgumentException, Framework/MockObject/MethodNameConstraint, Framework/MockObject/NoMoreParameterSetsConfiguredException, Framework/Constraint/IsEqual, Util/Test, Framework/Constraint/IsAnything, Framework/Constraint/Callback
+define Framework/MockObject/Rule/AnyInvokedCount with Framework/MockObject/Invocation, Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/Rule/AnyParameters with Framework/MockObject/Invocation, Framework/MockObject/Rule/ParametersRule
+define Framework/MockObject/Rule/InvocationOrder with Framework/MockObject/Invocation, Framework/SelfDescribing
+define Framework/MockObject/Rule/InvokedAtLeastCount with Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/Rule/InvokedAtLeastOnce with Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/Rule/InvokedAtMostCount with Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/Rule/InvokedCount with Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/Rule/InvocationOrder
+define Framework/MockObject/Rule/MethodName with Framework/Constraint/Constraint, Framework/ExpectationFailedException, Framework/InvalidArgumentException, Framework/MockObject/Invocation, Framework/MockObject/MethodNameConstraint
+define Framework/MockObject/Rule/OrderedParameterSets with Framework/MockObject/Invocation, Framework/MockObject/NoMoreParameterSetsConfiguredException, Framework/ExpectationFailedException, Framework/MockObject/Rule/ParametersRule
+define Framework/MockObject/Rule/Parameters with Framework/Constraint/Constraint, Framework/Constraint/IsEqual, Framework/ExpectationFailedException, Framework/MockObject/Invocation, Util/Test, Framework/Constraint/IsAnything, Framework/Constraint/Callback, Framework/MockObject/Rule/ParametersRule
+define Framework/MockObject/Rule/ParametersRule with Framework/ExpectationFailedException, Framework/MockObject/Invocation
+define Framework/MockObject/Rule/UnorderedParameterSets with Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/NoMoreParameterSetsConfiguredException, Framework/MockObject/Rule/ParametersRule
+define Framework/MockObject/Stub/is with Framework/MockObject/NoMoreReturnValuesConfiguredException, Framework/MockObject/Invocation, Framework/MockObject/RuntimeException, Util/Exporter, Framework/Constraint/Constraint, Framework/ExpectationFailedException
+define Framework/MockObject/Stub/ConsecutiveCalls with Framework/MockObject/Invocation, Framework/MockObject/NoMoreReturnValuesConfiguredException, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/Exception with Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnArgument with Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnCallback with Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnReference with Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnSelf with Framework/MockObject/Invocation, Framework/MockObject/RuntimeException, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnStub with Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/ReturnValueMap with Util/Exporter, Framework/Constraint/Constraint, Framework/ExpectationFailedException, Framework/MockObject/Invocation, Framework/MockObject/Stub/Stub
+define Framework/MockObject/Stub/Stub with Framework/MockObject/Invocation
+define Framework/MockObject/TestDoubleBuilder with Framework/MockObject/Generator/Generator, Framework/MockObject/Generator/ReflectionException
+define Framework/MockObject/TestStubBuilder with Framework/MockObject/Generator/UnknownTypeException, Framework/MockObject/Generator/ClassIsEnumerationException, Framework/MockObject/Generator/ClassIsFinalException, Framework/MockObject/Generator/DuplicateMethodException, Framework/MockObject/Generator/InvalidMethodNameException, Framework/MockObject/Generator/NameAlreadyInUseException, Framework/MockObject/Generator/ReflectionException, Framework/MockObject/Generator/RuntimeException, Framework/MockObject/TestDoubleBuilder
+define Framework/NativeType
+define Framework/Reorderable
+define Framework/SelfDescribing
+define Framework/Test
+define Framework/TestBuilder with TextUI/Configuration/Registry, Metadata/PreserveGlobalState, Metadata/Api/DataProvider, Metadata/Api/ProvidedData, Metadata/ExcludeGlobalVariableFromBackup, Metadata/ExcludeStaticPropertyFromBackup, Runner/ErrorHandler, Metadata/Api/Groups, Metadata/Api/Requirements, Metadata/BackupGlobals, Metadata/BackupStaticProperties
+define Framework/TestCase with Framework/TestStatus/TestStatus, Metadata/Api/Requirements, Util/Test, Metadata/WithEnvironmentVariable, TestRunner/TestResult/PassedTests, Framework/MockObject/Generator/Generator, Framework/MockObject/Rule/InvokedAtLeastCount, Framework/MockObject/Rule/InvokedAtLeastOnce, Metadata/Api/Groups, Runner/BackedUpEnvironmentVariable, Framework/Constraint/Constraint, Framework/MockObject/Rule/InvokedCount, Framework/MockObject/Stub, Framework/TestSize/TestSize, Runner/HookMethodCollection, Util/Exporter, Framework/MockObject/MockObjectInternal, Framework/MockObject/Rule/InvokedAtMostCount, Util/DifferBuilder, Runner/ErrorHandler, Framework/MockObject/MockBuilder, TextUI/Configuration/Registry, Runner/DeprecationCollector/Facade, Runner/ShutdownHandler, Framework/MockObject/Stub/Exception, Framework/Constraint/ExceptionCode, Framework/MockObject/MockObject, Metadata/Api/HookMethods, Framework/Constraint/ExceptionMessageMatchesRegularExpression, Framework/Constraint/ExceptionMessageIsOrContains, Framework/MockObject/Rule/AnyInvokedCount, Framework/MockObject/TestStubBuilder, Event/NoPreviousThrowableException, Framework/Constraint/ExceptionMessageIs, Framework/Assert, Framework/Reorderable, Framework/SelfDescribing
+define Framework/ChildProcessResultProcessor with Event/Code/ThrowableBuilder, Event/Emitter, TestRunner/TestResult/Facade, Runner/CodeCoverage, TestRunner/TestResult/PassedTests
+define Framework/SeparateProcessTestRunner with Event/NoPreviousThrowableException, TextUI/Configuration/SourceMapper, Util/PHP/Job, Util/PHP/JobRunnerRegistry, Event/Facade, Runner/CodeCoverage, TextUI/Configuration/Registry, Util/GlobalState
+define Framework/TestRunner with Runner/ErrorHandler, Runner/CodeCoverage, TextUI/Configuration/Registry, TextUI/Configuration/Configuration, Event/Facade
+define Framework/TestSize/is
+define Framework/TestSize/Known with Framework/TestSize/TestSize
+define Framework/TestSize/Large with Framework/TestSize/Known
+define Framework/TestSize/Medium with Framework/TestSize/Known
+define Framework/TestSize/Small with Framework/TestSize/Known
+define Framework/TestSize/TestSize
+define Framework/TestSize/Unknown with Framework/TestSize/TestSize
+define Framework/TestStatus/is
+define Framework/TestStatus/Deprecation with Framework/TestStatus/Known
+define Framework/TestStatus/Error with Framework/TestStatus/Known
+define Framework/TestStatus/Failure with Framework/TestStatus/Known
+define Framework/TestStatus/Incomplete with Framework/TestStatus/Known
+define Framework/TestStatus/Known with Framework/TestStatus/TestStatus
+define Framework/TestStatus/Notice with Framework/TestStatus/Known
+define Framework/TestStatus/Risky with Framework/TestStatus/Known
+define Framework/TestStatus/Skipped with Framework/TestStatus/Known
+define Framework/TestStatus/Success with Framework/TestStatus/Known
+define Framework/TestStatus/TestStatus
+define Framework/TestStatus/Unknown with Framework/TestStatus/TestStatus
+define Framework/TestStatus/Warning with Framework/TestStatus/Known
+define Framework/TestSuite with Event/NoPreviousThrowableException, Metadata/Api/HookMethods, Metadata/MetadataCollection, Util/Filter, Util/Reflection, Metadata/Api/Dependencies, Metadata/Api/Requirements, Runner/Exception, Runner/Filter/Factory, TestRunner/TestResult/Facade, Util/Test, Metadata/Api/Groups, Runner/Phpt/TestCase, Runner/TestSuiteLoader, Framework/Reorderable
+define Framework/to with Runner/Exception, Runner/Filter/Factory, TestRunner/TestResult/Facade, Util/Filter, Util/Reflection, Metadata/Api/Dependencies, Metadata/Api/Requirements, Util/Test, Runner/TestSuiteLoader, Metadata/Api/Groups, Runner/Phpt/TestCase, Event/NoPreviousThrowableException, Metadata/Api/HookMethods, Metadata/MetadataCollection
+define Framework/of with Event/NoPreviousThrowableException, Metadata/Api/HookMethods, Metadata/MetadataCollection, Runner/Exception, Runner/Filter/Factory, TestRunner/TestResult/Facade, Util/Filter, Util/Reflection, Metadata/Api/Dependencies, Metadata/Api/Requirements, Util/Test, Runner/TestSuiteLoader, Metadata/Api/Groups, Runner/Phpt/TestCase
+define Framework/TestSuiteIterator
+define Logging/is with Event/Event, Event/Tracer/Tracer
+define Logging/EventLogger with Event/Event, Event/Tracer/Tracer
+define Logging/JUnit/is with Event/TestSuite/Skipped, Util/Xml, Event/Facade, Event/Telemetry/Info, TextUI/Output/Printer, Event/Telemetry/HRTime, Event/InvalidArgumentException, Event/TestSuite/Started, Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Event/TestSuite/SkippedSubscriber, Event/TestSuite/StartedSubscriber
+define Logging/JUnit/JunitXmlLogger with Event/InvalidArgumentException, Event/TestSuite/Started, Event/TestSuite/Skipped, Util/Xml, Event/Facade, Event/Telemetry/Info, TextUI/Output/Printer, Event/Telemetry/HRTime
+define Logging/JUnit/Subscriber
+define Logging/JUnit/TestErroredSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestFailedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestFinishedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestMarkedIncompleteSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestPreparationErroredSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestPreparationFailedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestPreparationStartedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestPreparedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestPrintedUnexpectedOutputSubscriber with Logging/JUnit/Subscriber
+define Logging/JUnit/TestRunnerExecutionFinishedSubscriber with Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Logging/JUnit/Subscriber
+define Logging/JUnit/TestSkippedSubscriber with Event/InvalidArgumentException, Logging/JUnit/Subscriber
+define Logging/JUnit/TestSuiteFinishedSubscriber with Event/TestSuite/FinishedSubscriber, Event/TestSuite/Finished, Logging/JUnit/Subscriber
+define Logging/JUnit/TestSuiteSkippedSubscriber with Event/TestSuite/Skipped, Event/TestSuite/SkippedSubscriber, Logging/JUnit/Subscriber
+define Logging/JUnit/TestSuiteStartedSubscriber with Event/TestSuite/StartedSubscriber, Event/TestSuite/Started, Logging/JUnit/Subscriber
+define Logging/OpenTestReporting/CannotOpenUriForWritingException with Logging/OpenTestReporting/Exception
+define Logging/OpenTestReporting/Exception with Exception
+define Logging/OpenTestReporting/is with Event/TestSuite/Started, Metadata/Group, Event/TestSuite/Skipped, Event/TestSuite/TestSuiteForTestClass, Event/Code/Throwable, Event/Facade, Event/InvalidArgumentException, Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Event/Application/Started, Event/Application/StartedSubscriber, Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Event/TestSuite/SkippedSubscriber, Event/TestSuite/StartedSubscriber
+define Logging/OpenTestReporting/OtrXmlLogger with Event/Code/Throwable, Event/Facade, Event/TestSuite/TestSuiteForTestClass, Event/TestSuite/Started, Metadata/Group, Event/TestSuite/Skipped
+define Logging/OpenTestReporting/Status
+define Logging/OpenTestReporting/AfterLastTestMethodErroredSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/AfterLastTestMethodFailedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/BeforeFirstTestMethodErroredSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/BeforeFirstTestMethodFailedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestAbortedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestConsideredRiskySubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestDeprecationTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestErrorTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestErroredSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestFailedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestFinishedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestNoticeTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpDeprecationTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpNoticeTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpWarningTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpunitDeprecationTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpunitErrorTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpunitNoticeTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPhpunitWarningTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPreparationErroredSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPreparationFailedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPreparedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestPrintedUnexpectedOutputSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestRunnerFinishedSubscriber with Event/TestRunner/ExecutionFinishedSubscriber, Event/InvalidArgumentException, Event/TestRunner/ExecutionFinished, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestRunnerStartedSubscriber with Event/Application/Started, Event/Application/StartedSubscriber, Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestSkippedSubscriber with Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestSuiteFinishedSubscriber with Event/InvalidArgumentException, Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestSuiteSkippedSubscriber with Event/InvalidArgumentException, Event/TestSuite/Skipped, Event/TestSuite/SkippedSubscriber, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestSuiteStartedSubscriber with Event/TestSuite/Started, Event/TestSuite/StartedSubscriber, Event/InvalidArgumentException, Logging/OpenTestReporting/Subscriber
+define Logging/OpenTestReporting/TestWarningTriggeredSubscriber with Logging/OpenTestReporting/Subscriber
+define Logging/TeamCity/is with Event/InvalidArgumentException, Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Event/TestSuite/SkippedSubscriber, Event/TestSuite/Skipped, Event/TestSuite/Started, Event/TestSuite/StartedSubscriber, Event/Code/Throwable, Event/Event, Event/Facade, Event/TestSuite/TestSuiteForTestMethodWithDataProvider, Framework/Exception, Event/TestSuite/TestSuiteForTestClass, TextUI/Output/Printer, Event/Telemetry/HRTime
+define Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestConsideredRiskySubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestErroredSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestFailedSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestFinishedSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestMarkedIncompleteSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestPreparedSubscriber with Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestRunnerExecutionFinishedSubscriber with Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestSkippedSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestSuiteBeforeFirstTestMethodErroredSubscriber with Event/InvalidArgumentException, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestSuiteFinishedSubscriber with Event/TestSuite/FinishedSubscriber, Event/TestSuite/Finished, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestSuiteSkippedSubscriber with Event/InvalidArgumentException, Event/TestSuite/Skipped, Event/TestSuite/SkippedSubscriber, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TestSuiteStartedSubscriber with Event/TestSuite/Started, Event/TestSuite/StartedSubscriber, Logging/TeamCity/Subscriber
+define Logging/TeamCity/TeamCityLogger with Event/TestSuite/TestSuiteForTestClass, TextUI/Output/Printer, Event/TestSuite/Skipped, Event/TestSuite/Started, Event/Telemetry/HRTime, Event/TestSuite/Finished, Event/Code/Throwable, Event/Event, Event/Facade, Event/InvalidArgumentException, Event/TestSuite/TestSuiteForTestMethodWithDataProvider, Framework/Exception
+define Logging/TestDox/is with Framework/TestCase, Metadata/TestDox, Util/Filter, Event/Facade, Metadata/Parser/Registry, Util/Color, Util/Exporter, Metadata/TestDoxFormatter, Event/InvalidArgumentException, Event/Code/Throwable, Framework/TestStatus/TestStatus, Logging/TestDox/TestResult, TestRunner/IssueFilter
+define Logging/TestDox/HtmlRenderer
+define Logging/TestDox/NamePrettifier with Metadata/TestDoxFormatter, Framework/TestCase, Metadata/TestDox, Util/Filter, Event/Facade, Metadata/Parser/Registry, Util/Color, Util/Exporter
+define Logging/TestDox/PlainTextRenderer
+define Logging/TestDox/Subscriber
+define Logging/TestDox/TestConsideredRiskySubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestErroredSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestFailedSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestFinishedSubscriber with Event/InvalidArgumentException, Logging/TestDox/Subscriber
+define Logging/TestDox/TestMarkedIncompleteSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestPassedSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestPreparedSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestSkippedSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredDeprecationSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredNoticeSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpDeprecationSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpNoticeSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpWarningSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpunitDeprecationSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpunitErrorSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredPhpunitWarningSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestTriggeredWarningSubscriber with Logging/TestDox/Subscriber
+define Logging/TestDox/TestResult with Event/Code/Throwable, Framework/TestStatus/TestStatus
+define Logging/TestDox/TestResultCollection
+define Logging/TestDox/TestResultCollectionIterator
+define Logging/TestDox/TestResultCollector with Event/InvalidArgumentException, Logging/TestDox/TestResult, Event/Code/Throwable, TestRunner/IssueFilter, Framework/TestStatus/TestStatus, Event/Facade
+define Logging/TestDox/as with Framework/TestStatus/TestStatus, Event/Facade, Logging/TestDox/TestResult, Event/Code/Throwable, Event/InvalidArgumentException, TestRunner/IssueFilter
+define Metadata/After with Metadata/Metadata
+define Metadata/AfterClass with Metadata/Metadata
+define Metadata/AllowMockObjectsWithoutExpectations with Metadata/Metadata
+define Metadata/Api/is with Metadata/UsesMethod, Metadata/CoversMethod, Metadata/UsesClassesThatImplementInterface, Metadata/CoversFunction, Metadata/UsesFunction, Metadata/UsesNamespace, Metadata/CoversClass, Metadata/CoversClassesThatImplementInterface, Metadata/UsesClassesThatExtendClass, Metadata/UsesTrait, Metadata/CoversNamespace, Metadata/UsesClass, Metadata/CoversTrait, Metadata/Parser/Registry, Framework/TestCase, Metadata/CoversClassesThatExtendClass, Metadata/DataProviderClosure, Metadata/MetadataCollection, Metadata/TestWith, Metadata/DataProvider, Util/Test, Framework/InvalidDataProviderException, Framework/ExecutionOrderDependency, Metadata/DependsOnClass, Metadata/DependsOnMethod, Metadata/Group, Metadata/RequiresPhpExtension, Framework/TestSize/TestSize, Util/Reflection, Metadata/PostCondition, Runner/HookMethodCollection, Metadata/Before, Metadata/BeforeClass, Metadata/PreCondition, Runner/HookMethod, Metadata/After, Metadata/AfterClass, Event/Facade, Metadata/RequiresPhpunit, Metadata/RequiresPhpunitExtension, Metadata/RequiresSetting, Metadata/Version/ComparisonRequirement, Metadata/Version/Requirement, TextUI/Configuration/Registry, Metadata/RequiresMethod, Metadata/RequiresOperatingSystem, Metadata/RequiresOperatingSystemFamily, Runner/Version, Metadata/RequiresEnvironmentVariable, Metadata/RequiresFunction, Metadata/RequiresPhp
+define Metadata/Api/CodeCoverage with Framework/TestCase, Metadata/CoversClassesThatExtendClass, Metadata/CoversTrait, Metadata/Parser/Registry, Metadata/CoversMethod, Metadata/UsesClassesThatImplementInterface, Metadata/UsesMethod, Metadata/CoversClass, Metadata/CoversClassesThatImplementInterface, Metadata/CoversFunction, Metadata/UsesFunction, Metadata/UsesNamespace, Metadata/CoversNamespace, Metadata/UsesClass, Metadata/UsesClassesThatExtendClass, Metadata/UsesTrait
+define Metadata/Api/DataProvider with Framework/TestCase, Metadata/DataProviderClosure, Metadata/MetadataCollection, Metadata/Parser/Registry, Metadata/TestWith, Util/Test, Framework/InvalidDataProviderException, Metadata/DataProvider
+define Metadata/Api/Dependencies with Metadata/DependsOnClass, Metadata/DependsOnMethod, Metadata/Parser/Registry, Framework/ExecutionOrderDependency
+define Metadata/Api/Groups with Metadata/Parser/Registry, Metadata/RequiresPhpExtension, Metadata/UsesClass, Metadata/UsesFunction, Framework/TestSize/TestSize, Metadata/CoversClass, Metadata/CoversFunction, Metadata/Group
+define Metadata/Api/HookMethods with Util/Reflection, Metadata/Parser/Registry, Metadata/PostCondition, Runner/HookMethodCollection, Metadata/Before, Metadata/BeforeClass, Metadata/PreCondition, Runner/HookMethod, Framework/TestCase, Metadata/After, Metadata/AfterClass
+define Metadata/Api/instanceof with Metadata/Before, Metadata/BeforeClass, Metadata/PreCondition, Runner/HookMethod, Framework/TestCase, Metadata/After, Metadata/AfterClass, Util/Reflection, Metadata/Parser/Registry, Metadata/PostCondition, Runner/HookMethodCollection
+define Metadata/Api/ProvidedData
+define Metadata/Api/Requirements with Event/Facade, Metadata/RequiresPhpExtension, Metadata/RequiresPhpunit, Metadata/RequiresPhpunitExtension, Metadata/RequiresSetting, Metadata/Version/ComparisonRequirement, Metadata/Version/Requirement, TextUI/Configuration/Registry, Metadata/RequiresMethod, Metadata/RequiresOperatingSystem, Metadata/RequiresOperatingSystemFamily, Runner/Version, Metadata/RequiresEnvironmentVariable, Metadata/RequiresFunction, Metadata/RequiresPhp
+define Metadata/BackupGlobals with Metadata/Metadata
+define Metadata/BackupStaticProperties with Metadata/Metadata
+define Metadata/Before with Metadata/Metadata
+define Metadata/BeforeClass with Metadata/Metadata
+define Metadata/CoversClass with Metadata/Metadata
+define Metadata/CoversClassesThatExtendClass with Metadata/Metadata
+define Metadata/CoversClassesThatImplementInterface with Metadata/Metadata
+define Metadata/CoversFunction with Metadata/Metadata
+define Metadata/CoversMethod with Metadata/Metadata
+define Metadata/CoversNamespace with Metadata/Metadata
+define Metadata/CoversNothing with Metadata/Metadata
+define Metadata/CoversTrait with Metadata/Metadata
+define Metadata/DataProvider with Metadata/Metadata
+define Metadata/DataProviderClosure with Metadata/Metadata
+define Metadata/DependsOnClass with Metadata/Metadata
+define Metadata/DependsOnMethod with Metadata/Metadata
+define Metadata/DisableReturnValueGenerationForTestDoubles with Metadata/Metadata
+define Metadata/DoesNotPerformAssertions with Metadata/Metadata
+define Metadata/Exception with Exception
+define Metadata/is with Exception
+define Metadata/InvalidAttributeException with Exception
+define Metadata/InvalidVersionRequirementException with Metadata/Exception
+define Metadata/NoVersionRequirementException with Metadata/Exception
+define Metadata/ExcludeGlobalVariableFromBackup with Metadata/Metadata
+define Metadata/ExcludeStaticPropertyFromBackup with Metadata/Metadata
+define Metadata/Group with Metadata/Metadata
+define Metadata/IgnoreDeprecations with Metadata/Metadata
+define Metadata/IgnorePhpunitDeprecations with Metadata/Metadata
+define Metadata/IgnorePhpunitWarnings with Metadata/Metadata
+define Metadata/Level
+define Metadata/Metadata with Metadata/Version/Requirement, Runner/Extension/Extension
+define Metadata/MetadataCollection
+define Metadata/MetadataCollectionIterator
+define Metadata/Parser/is with Framework/Attributes/CoversNamespace, Framework/Attributes/DoesNotPerformAssertions, Framework/Attributes/RequiresPhpunitExtension, Framework/Attributes/RunInSeparateProcess, Framework/Attributes/Ticket, Framework/Attributes/BackupGlobals, Framework/Attributes/RequiresEnvironmentVariable, Framework/Attributes/RequiresFunction, Framework/Attributes/RequiresOperatingSystemFamily, Framework/Attributes/RequiresPhp, Framework/Attributes/TestDoxFormatter, Framework/Attributes/UsesClassesThatImplementInterface, Metadata/Metadata, Framework/Attributes/DependsExternalUsingDeepClone, Framework/Attributes/DependsOnClassUsingShallowClone, Framework/Attributes/IgnoreDeprecations, Framework/Attributes/RequiresPhpunit, Framework/Attributes/RunTestsInSeparateProcesses, Framework/Attributes/CoversMethod, Framework/Attributes/CoversNothing, Framework/Attributes/CoversTrait, Framework/Attributes/DependsExternal, Framework/Attributes/DependsUsingDeepClone, Event/Facade, Framework/Attributes/DataProvider, Framework/Attributes/TestWithJson, Metadata/MetadataCollection, Framework/Attributes/PostCondition, Framework/Attributes/BeforeClass, Framework/Attributes/DataProviderClosure, Framework/Attributes/DependsUsingShallowClone, Framework/Attributes/ExcludeGlobalVariableFromBackup, Framework/Attributes/IgnorePhpunitDeprecations, Framework/Attributes/DependsOnClass, Framework/Attributes/Group, Framework/Attributes/Medium, Framework/Attributes/WithEnvironmentVariable, Metadata/InvalidAttributeException, Framework/Attributes/PreserveGlobalState, Framework/Attributes/Test, Metadata/Version/Requirement, Framework/Attributes/CoversFunction, Framework/Attributes/DependsOnClassUsingDeepClone, Framework/Attributes/IgnorePhpunitWarnings, Framework/Attributes/Small, Framework/Attributes/TestDoxFormatterExternal, Framework/Attributes/TestWith, Framework/Attributes/BackupStaticProperties, Framework/Attributes/DataProviderExternal, Framework/Attributes/ExcludeStaticPropertyFromBackup, Framework/Attributes/Large, Framework/Attributes/RequiresSetting, Framework/Attributes/TestDox, Framework/Attributes/UsesTrait, Framework/Attributes/UsesClass, Framework/Attributes/UsesMethod, Framework/Attributes/UsesNamespace, Framework/Attributes/AfterClass, Framework/Attributes/CoversClassesThatExtendClass, Framework/Attributes/DependsExternalUsingShallowClone, Framework/Attributes/PreCondition, Framework/Attributes/RequiresPhpExtension, Framework/Attributes/After, Framework/Attributes/AllowMockObjectsWithoutExpectations, Framework/Attributes/RequiresMethod, Framework/Attributes/Before, Framework/Attributes/CoversClass, Framework/Attributes/DisableReturnValueGenerationForTestDoubles, Framework/Attributes/Depends, Framework/Attributes/UsesFunction, Framework/Attributes/CoversClassesThatImplementInterface, Framework/Attributes/RequiresOperatingSystem, Framework/Attributes/UsesClassesThatExtendClass, Framework/Attributes/WithoutErrorHandler
+define Metadata/Parser/AttributeParser with Framework/Attributes/RequiresOperatingSystemFamily, Framework/Attributes/RequiresPhp, Framework/Attributes/Ticket, Framework/Attributes/BackupGlobals, Framework/Attributes/RequiresEnvironmentVariable, Framework/Attributes/RequiresFunction, Framework/Attributes/IgnoreDeprecations, Framework/Attributes/RequiresPhpunit, Framework/Attributes/TestDoxFormatter, Framework/Attributes/UsesClassesThatImplementInterface, Metadata/Metadata, Framework/Attributes/DependsExternalUsingDeepClone, Framework/Attributes/DependsOnClassUsingShallowClone, Framework/Attributes/DependsExternal, Framework/Attributes/DependsUsingDeepClone, Framework/Attributes/RunTestsInSeparateProcesses, Framework/Attributes/CoversMethod, Framework/Attributes/CoversNothing, Framework/Attributes/CoversTrait, Metadata/MetadataCollection, Event/Facade, Framework/Attributes/DataProvider, Framework/Attributes/TestWithJson, Framework/Attributes/ExcludeGlobalVariableFromBackup, Framework/Attributes/IgnorePhpunitDeprecations, Framework/Attributes/PostCondition, Framework/Attributes/BeforeClass, Framework/Attributes/DataProviderClosure, Framework/Attributes/DependsUsingShallowClone, Framework/Attributes/WithEnvironmentVariable, Metadata/InvalidAttributeException, Framework/Attributes/DependsOnClass, Framework/Attributes/Group, Framework/Attributes/Medium, Framework/Attributes/PreserveGlobalState, Framework/Attributes/Test, Framework/Attributes/Small, Framework/Attributes/TestDoxFormatterExternal, Metadata/Version/Requirement, Framework/Attributes/CoversFunction, Framework/Attributes/DependsOnClassUsingDeepClone, Framework/Attributes/IgnorePhpunitWarnings, Framework/Attributes/Large, Framework/Attributes/RequiresSetting, Framework/Attributes/TestWith, Framework/Attributes/BackupStaticProperties, Framework/Attributes/DataProviderExternal, Framework/Attributes/ExcludeStaticPropertyFromBackup, Framework/Attributes/TestDox, Framework/Attributes/UsesTrait, Framework/Attributes/PreCondition, Framework/Attributes/RequiresPhpExtension, Framework/Attributes/UsesClass, Framework/Attributes/UsesMethod, Framework/Attributes/UsesNamespace, Framework/Attributes/AfterClass, Framework/Attributes/CoversClassesThatExtendClass, Framework/Attributes/DependsExternalUsingShallowClone, Framework/Attributes/After, Framework/Attributes/AllowMockObjectsWithoutExpectations, Framework/Attributes/RequiresMethod, Framework/Attributes/Before, Framework/Attributes/CoversClass, Framework/Attributes/DisableReturnValueGenerationForTestDoubles, Framework/Attributes/Depends, Framework/Attributes/UsesFunction, Framework/Attributes/WithoutErrorHandler, Framework/Attributes/CoversClassesThatImplementInterface, Framework/Attributes/RequiresOperatingSystem, Framework/Attributes/UsesClassesThatExtendClass, Framework/Attributes/RunInSeparateProcess, Framework/Attributes/CoversNamespace, Framework/Attributes/DoesNotPerformAssertions, Framework/Attributes/RequiresPhpunitExtension, Metadata/Parser/Parser
+define Metadata/Parser/CachingParser with Metadata/MetadataCollection, Metadata/Parser/Parser
+define Metadata/Parser/Parser with Metadata/MetadataCollection
+define Metadata/Parser/Registry
+define Metadata/PostCondition with Metadata/Metadata
+define Metadata/PreCondition with Metadata/Metadata
+define Metadata/PreserveGlobalState with Metadata/Metadata
+define Metadata/RequiresEnvironmentVariable with Metadata/Metadata
+define Metadata/RequiresFunction with Metadata/Metadata
+define Metadata/RequiresMethod with Metadata/Metadata
+define Metadata/RequiresOperatingSystem with Metadata/Metadata
+define Metadata/RequiresOperatingSystemFamily with Metadata/Metadata
+define Metadata/RequiresPhp with Metadata/Version/Requirement, Metadata/Metadata
+define Metadata/RequiresPhpExtension with Metadata/Version/Requirement, Metadata/Metadata
+define Metadata/RequiresPhpunit with Metadata/Version/Requirement, Metadata/Metadata
+define Metadata/RequiresPhpunitExtension with Runner/Extension/Extension, Metadata/Metadata
+define Metadata/RequiresSetting with Metadata/Metadata
+define Metadata/RunInSeparateProcess with Metadata/Metadata
+define Metadata/RunTestsInSeparateProcesses with Metadata/Metadata
+define Metadata/Test with Metadata/Metadata
+define Metadata/TestDox with Metadata/Metadata
+define Metadata/TestDoxFormatter with Metadata/Metadata
+define Metadata/TestWith with Metadata/Metadata
+define Metadata/UsesClass with Metadata/Metadata
+define Metadata/UsesClassesThatExtendClass with Metadata/Metadata
+define Metadata/UsesClassesThatImplementInterface with Metadata/Metadata
+define Metadata/UsesFunction with Metadata/Metadata
+define Metadata/UsesMethod with Metadata/Metadata
+define Metadata/UsesNamespace with Metadata/Metadata
+define Metadata/UsesTrait with Metadata/Metadata
+define Metadata/Version/ComparisonRequirement with Util/VersionComparisonOperator, Metadata/Version/Requirement
+define Metadata/Version/ConstraintRequirement with Metadata/Version/Requirement
+define Metadata/Version/Requirement with Metadata/InvalidVersionRequirementException, Util/InvalidVersionOperatorException, Util/VersionComparisonOperator
+define Metadata/WithEnvironmentVariable with Metadata/Metadata
+define Metadata/WithoutErrorHandler with Metadata/Metadata
+define Runner/is with TextUI/Output/Printer, TextUI/Configuration/Configuration, Util/Filesystem, TextUI/Configuration/CodeCoverageFilterRegistry, Framework/TestCase, Runner/IssueTriggerResolver/DefaultResolver, Metadata/IgnoreDeprecations, TextUI/Configuration/Registry, Runner/Baseline/Baseline, Runner/Baseline/Issue, TextUI/Configuration/SourceFilter, Runner/IssueTriggerResolver/Resolver, Util/ExcludeList, Event/Code/NoTestCaseObjectOnCallStackException, Runner/ResultCache/ResultCacheId, Framework/DataProviderTestSuite, Framework/Reorderable, Framework/Test, Framework/TestSuite, Runner/ResultCache/NullResultCache, Runner/ResultCache/ResultCache
+define Runner/BackedUpEnvironmentVariable
+define Runner/Baseline/is with Runner/Exception, TextUI/Configuration/SourceFilter, Runner/FileDoesNotExistException, TextUI/Configuration/Source, Event/Facade, Util/Xml/Loader, Util/Xml/XmlException
+define Runner/Baseline/Baseline
+define Runner/Baseline/CannotLoadBaselineException with Runner/Exception
+define Runner/Baseline/CannotWriteBaselineException with Runner/Exception
+define Runner/Baseline/FileDoesNotHaveLineException with Runner/Exception
+define Runner/Baseline/Generator with Runner/FileDoesNotExistException, TextUI/Configuration/SourceFilter, TextUI/Configuration/Source, Event/Facade
+define Runner/Baseline/Issue with Runner/FileDoesNotExistException
+define Runner/Baseline/Reader with Util/Xml/Loader, Util/Xml/XmlException
+define Runner/Baseline/RelativePathCalculator
+define Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredDeprecationSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredNoticeSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredPhpDeprecationSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredPhpNoticeSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredPhpWarningSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/TestTriggeredWarningSubscriber with Runner/FileDoesNotExistException, Runner/Baseline/Subscriber
+define Runner/Baseline/Writer
+define Runner/CodeCoverage with TextUI/Configuration/Configuration, Util/Filesystem, TextUI/Configuration/CodeCoverageFilterRegistry, Framework/TestCase, TextUI/Output/Printer
+define Runner/CodeCoverageInitializationStatus
+define Runner/DeprecationCollector/is with TestRunner/IssueFilter, Event/Facade, Event/EventFacadeIsSealedException, Event/UnknownSubscriberTypeException, TextUI/Configuration/Registry
+define Runner/DeprecationCollector/Collector with Event/Facade, TestRunner/IssueFilter
+define Runner/DeprecationCollector/Facade with Event/EventFacadeIsSealedException, Event/Facade, Event/UnknownSubscriberTypeException, TestRunner/IssueFilter, TextUI/Configuration/Registry
+define Runner/DeprecationCollector/InIsolationCollector with TestRunner/IssueFilter
+define Runner/DeprecationCollector/Subscriber
+define Runner/DeprecationCollector/TestPreparedSubscriber with Runner/DeprecationCollector/Subscriber
+define Runner/DeprecationCollector/TestTriggeredDeprecationSubscriber with Runner/DeprecationCollector/Subscriber
+define Runner/ErrorHandler with Event/Code/NoTestCaseObjectOnCallStackException, Runner/IssueTriggerResolver/Resolver, Util/ExcludeList, Framework/TestCase, Metadata/IgnoreDeprecations, Runner/IssueTriggerResolver/DefaultResolver, TextUI/Configuration/Registry, Runner/Baseline/Baseline, Runner/Baseline/Issue, TextUI/Configuration/SourceFilter
+define Runner/ClassCannotBeFoundException with Runner/Exception
+define Runner/ClassDoesNotExtendTestCaseException with Runner/Exception
+define Runner/ClassIsAbstractException with Runner/Exception
+define Runner/CodeCoverageFileExistsException with Runner/Exception
+define Runner/DirectoryDoesNotExistException with Runner/Exception
+define Runner/ErrorException with Runner/Exception
+define Runner/Exception with Exception
+define Runner/FileDoesNotExistException with Runner/Exception
+define Runner/InvalidOrderException with Runner/Exception
+define Runner/ParameterDoesNotExistException with Runner/Exception
+define Runner/Extension/Extension with TextUI/Configuration/Configuration
+define Runner/Extension/is with Event/Facade, TextUI/Configuration/Configuration, Event/EventFacadeIsSealedException, Event/Subscriber, Event/Tracer/Tracer, Event/UnknownSubscriberTypeException, Runner/Version
+define Runner/Extension/ExtensionBootstrapper with Event/Facade, TextUI/Configuration/Configuration
+define Runner/Extension/ExtensionFacade with Event/EventFacadeIsSealedException, Event/Facade, Event/Subscriber, Event/Tracer/Tracer, Event/UnknownSubscriberTypeException
+define Runner/Extension/Facade with Event/Tracer/Tracer, Event/UnknownSubscriberTypeException, Event/EventFacadeIsSealedException, Event/Subscriber
+define Runner/Extension/ParameterCollection with Runner/ParameterDoesNotExistException
+define Runner/Extension/PharLoader with Runner/Version
+define Runner/Filter/is with Framework/Test, Framework/TestSuite, Runner/Phpt/TestCase, Event/TestData/NoDataSetFromDataProviderException
+define Runner/Filter/ExcludeGroupFilterIterator with Runner/Filter/GroupFilterIterator
+define Runner/Filter/ExcludeNameFilterIterator with Runner/Filter/NameFilterIterator
+define Runner/Filter/Factory with Framework/Test, Framework/TestSuite
+define Runner/Filter/GroupFilterIterator with Runner/Phpt/TestCase, Framework/TestSuite, Framework/Test
+define Runner/Filter/IncludeGroupFilterIterator with Runner/Filter/GroupFilterIterator
+define Runner/Filter/IncludeNameFilterIterator with Runner/Filter/NameFilterIterator
+define Runner/Filter/NameFilterIterator with Runner/Phpt/TestCase, Framework/Test, Framework/TestSuite
+define Runner/Filter/TestIdFilterIterator with Framework/TestSuite, Event/TestData/NoDataSetFromDataProviderException, Framework/Test, Runner/Phpt/TestCase
+define Runner/GarbageCollection/is with Event/Facade, Event/InvalidArgumentException, Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Event/TestRunner/ExecutionStarted, Event/TestRunner/ExecutionStartedSubscriber
+define Runner/GarbageCollection/GarbageCollectionHandler with Event/Facade
+define Runner/GarbageCollection/ExecutionFinishedSubscriber with Event/InvalidArgumentException, Event/TestRunner/ExecutionFinished, Event/TestRunner/ExecutionFinishedSubscriber, Runner/GarbageCollection/Subscriber
+define Runner/GarbageCollection/ExecutionStartedSubscriber with Event/InvalidArgumentException, Event/TestRunner/ExecutionStarted, Event/TestRunner/ExecutionStartedSubscriber, Runner/GarbageCollection/Subscriber
+define Runner/GarbageCollection/Subscriber
+define Runner/GarbageCollection/TestFinishedSubscriber with Event/InvalidArgumentException, Runner/GarbageCollection/Subscriber
+define Runner/HookMethod
+define Runner/HookMethodCollection
+define TestRunner/is with TextUI/Configuration/Source, TextUI/Configuration/SourceFilter
+define TestRunner/IssueFilter with TextUI/Configuration/SourceFilter, TextUI/Configuration/Source
+define Runner/IssueTriggerResolver/is
+define Runner/IssueTriggerResolver/DefaultResolver with Runner/IssueTriggerResolver/Resolver
+define Runner/IssueTriggerResolver/Resolution
+define Runner/IssueTriggerResolver/Resolver
+define Runner/Phpt/is with Runner/Exception, Framework/ExecutionOrderDependency, Framework/Reorderable, Framework/SelfDescribing, Framework/Assert, Runner/CodeCoverageFileExistsException, Util/PHP/Job, Framework/ExpectationFailedException, Framework/Test, Util/PHP/JobRunnerRegistry, Event/Code/ThrowableBuilder, Runner/CodeCoverage, Event/NoPreviousThrowableException, Framework/IncompleteTestError, TestRunner/TestResult/Facade, Framework/AssertionFailedError, TextUI/Configuration/Registry, Framework/PhptAssertionFailedError
+define Runner/Phpt/CannotLoadPhptFileException with Runner/Exception
+define Runner/Phpt/InvalidPhptFileException with Runner/Exception
+define Runner/Phpt/PhptExternalFileCannotBeLoadedException with Runner/Exception
+define Runner/Phpt/UnsupportedPhptSectionException with Runner/Exception
+define Runner/Phpt/Parser with Runner/Exception
+define Runner/Phpt/Renderer
+define Runner/Phpt/TestCase with Event/NoPreviousThrowableException, Framework/IncompleteTestError, TestRunner/TestResult/Facade, Framework/AssertionFailedError, TextUI/Configuration/Registry, Framework/PhptAssertionFailedError, Framework/ExecutionOrderDependency, Framework/Reorderable, Framework/SelfDescribing, Framework/Assert, Runner/CodeCoverageFileExistsException, Runner/Exception, Util/PHP/Job, Framework/ExpectationFailedException, Framework/Test, Util/PHP/JobRunnerRegistry, Event/Code/ThrowableBuilder, Runner/CodeCoverage
+define Runner/ResultCache/is with Framework/TestStatus/TestStatus, Runner/DirectoryDoesNotExistException, Runner/Exception, Util/Filesystem, Event/Facade, Framework/InvalidArgumentException, Event/Event, Event/Telemetry/HRTime, Framework/TestCase, Framework/Reorderable, Event/InvalidArgumentException, Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Event/TestSuite/Started, Event/TestSuite/StartedSubscriber
+define Runner/ResultCache/DefaultResultCache with Framework/TestStatus/TestStatus, Runner/DirectoryDoesNotExistException, Runner/Exception, Util/Filesystem, Runner/ResultCache/ResultCache
+define Runner/ResultCache/NullResultCache with Framework/TestStatus/TestStatus, Runner/ResultCache/ResultCache
+define Runner/ResultCache/ResultCache with Framework/TestStatus/TestStatus
+define Runner/ResultCache/ResultCacheHandler with Framework/TestStatus/TestStatus, Event/Event, Event/Telemetry/HRTime, Framework/InvalidArgumentException, Event/Facade
+define Runner/ResultCache/ResultCacheId with Framework/Reorderable, Framework/TestCase
+define Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestConsideredRiskySubscriber with Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestErroredSubscriber with Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestFailedSubscriber with Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestFinishedSubscriber with Event/InvalidArgumentException, Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestMarkedIncompleteSubscriber with Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestPreparedSubscriber with Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestSkippedSubscriber with Event/InvalidArgumentException, Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestSuiteFinishedSubscriber with Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, Runner/ResultCache/Subscriber
+define Runner/ResultCache/TestSuiteStartedSubscriber with Event/TestSuite/Started, Event/TestSuite/StartedSubscriber, Runner/ResultCache/Subscriber
+define Runner/ShutdownHandler
+define TestRunner/TestResult/is with Event/TestRunner/PhpDeprecationTriggered, Event/TestSuite/Skipped, Event/TestSuite/Finished, Event/TestRunner/ExecutionStarted, Event/TestSuite/TestSuiteForTestClass, Event/TestRunner/ChildProcessErrored, Event/Facade, Event/TestSuite/TestSuiteForTestMethodWithDataProvider, TestRunner/TestResult/Issues/Issue, Event/TestRunner/ErrorTriggered, Event/TestRunner/NoticeTriggered, Event/TestRunner/WarningTriggered, TestRunner/IssueFilter, Event/TestRunner/Issue/DeprecationTriggered, Event/TestRunner/PhpNoticeTriggered, Event/TestRunner/PhpWarningTriggered, Event/TestSuite/Started, Runner/DeprecationCollector/Facade, TextUI/Configuration/Configuration, TextUI/Configuration/Registry, Metadata/Api/Groups, Framework/TestSize/Known, Framework/TestSize/TestSize, Event/TestRunner/ExecutionStartedSubscriber, Event/TestRunner/Issue/DeprecationTriggeredSubscriber, Event/TestRunner/ErrorTriggeredSubscriber, Event/TestRunner/Issue/NoticeTriggered, Event/TestRunner/Issue/NoticeTriggeredSubscriber, Event/TestRunner/PhpDeprecationTriggeredSubscriber, Event/TestRunner/PhpNoticeTriggeredSubscriber, Event/TestRunner/PhpWarningTriggeredSubscriber, Event/TestRunner/Issue/WarningTriggered, Event/TestRunner/Issue/WarningTriggeredSubscriber, Event/TestRunner/DeprecationTriggered, Event/TestRunner/DeprecationTriggeredSubscriber, Event/TestRunner/NoticeTriggeredSubscriber, Event/TestRunner/WarningTriggeredSubscriber, Event/TestSuite/FinishedSubscriber, Event/TestSuite/SkippedSubscriber, Event/TestSuite/StartedSubscriber
+define TestRunner/TestResult/Collector with Event/TestRunner/Issue/DeprecationTriggered, Event/TestRunner/PhpNoticeTriggered, Event/TestRunner/PhpWarningTriggered, Event/TestSuite/Started, Event/TestRunner/PhpDeprecationTriggered, Event/TestSuite/Skipped, Event/TestSuite/Finished, Event/TestRunner/ExecutionStarted, Event/TestSuite/TestSuiteForTestClass, Event/TestRunner/ChildProcessErrored, TestRunner/TestResult/Issues/Issue, Event/Facade, Event/TestSuite/TestSuiteForTestMethodWithDataProvider, Event/TestRunner/WarningTriggered, TestRunner/IssueFilter, Event/TestRunner/ErrorTriggered, Event/TestRunner/NoticeTriggered
+define TestRunner/TestResult/Facade with TextUI/Configuration/Configuration, TextUI/Configuration/Registry, Runner/DeprecationCollector/Facade, TestRunner/IssueFilter
+define TestRunner/TestResult/Issues/is
+define TestRunner/TestResult/Issues/Issue
+define TestRunner/TestResult/PassedTests with Framework/TestSize/Known, Framework/TestSize/TestSize, Metadata/Api/Groups
+define TestRunner/TestResult/AfterTestClassMethodErroredSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/AfterTestClassMethodFailedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/BeforeTestClassMethodErroredSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/BeforeTestClassMethodFailedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/ChildProcessErroredSubscriber with Event/TestRunner/ChildProcessErrored, TestRunner/TestResult/Subscriber, Event/TestRunner/ChildProcessErroredSubscriber
+define TestRunner/TestResult/ExecutionStartedSubscriber with Event/TestRunner/ExecutionStarted, Event/TestRunner/ExecutionStartedSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestConsideredRiskySubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestErroredSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestFailedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestFinishedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestMarkedIncompleteSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestPreparedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssueDeprecationSubscriber with Event/TestRunner/Issue/DeprecationTriggered, Event/TestRunner/Issue/DeprecationTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssueErrorSubscriber with Event/TestRunner/ErrorTriggered, Event/TestRunner/ErrorTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssueNoticeSubscriber with Event/TestRunner/Issue/NoticeTriggered, Event/TestRunner/Issue/NoticeTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssuePhpDeprecationSubscriber with Event/TestRunner/PhpDeprecationTriggered, Event/TestRunner/PhpDeprecationTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssuePhpNoticeSubscriber with Event/TestRunner/PhpNoticeTriggered, Event/TestRunner/PhpNoticeTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssuePhpWarningSubscriber with Event/TestRunner/PhpWarningTriggered, Event/TestRunner/PhpWarningTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredIssueWarningSubscriber with Event/TestRunner/Issue/WarningTriggered, Event/TestRunner/Issue/WarningTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredPhpunitDeprecationSubscriber with Event/TestRunner/DeprecationTriggered, Event/TestRunner/DeprecationTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredPhpunitNoticeSubscriber with Event/TestRunner/NoticeTriggered, Event/TestRunner/NoticeTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestRunnerTriggeredPhpunitWarningSubscriber with Event/TestRunner/WarningTriggered, Event/TestRunner/WarningTriggeredSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestSkippedSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestSuiteFinishedSubscriber with Event/TestSuite/Finished, Event/TestSuite/FinishedSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestSuiteSkippedSubscriber with Event/TestSuite/SkippedSubscriber, Event/TestSuite/Skipped, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestSuiteStartedSubscriber with Event/TestSuite/Started, Event/TestSuite/StartedSubscriber, TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredDeprecationSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredErrorSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredNoticeSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpDeprecationSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpNoticeSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpWarningSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpunitDeprecationSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpunitErrorSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpunitNoticeSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredPhpunitWarningSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestTriggeredWarningSubscriber with TestRunner/TestResult/Subscriber
+define TestRunner/TestResult/TestResult with Event/TestRunner/NoticeTriggered, Event/TestRunner/PhpNoticeTriggered, Event/TestRunner/Issue/DeprecationTriggered, TestRunner/TestResult/Issues/Issue, Event/TestSuite/Skipped, Event/TestRunner/ErrorTriggered, Event/TestRunner/PhpDeprecationTriggered, Event/TestRunner/PhpWarningTriggered, Event/TestRunner/WarningTriggered
+define Runner/TestSuiteLoader with Framework/TestCase
+define Runner/TestSuiteSorter with Runner/ResultCache/ResultCache, Runner/ResultCache/ResultCacheId, Framework/DataProviderTestSuite, Framework/Reorderable, Framework/Test, Framework/TestCase, Framework/TestSuite, Runner/ResultCache/NullResultCache
+define Runner/Version
+define TextUI/is with Logging/EventLogger, Logging/TestDox/HtmlRenderer, Runner/TestSuiteSorter, TextUI/Command/MigrateConfigurationCommand, TextUI/Configuration/Registry, Logging/TeamCity/TeamCityLogger, Runner/ResultCache/ResultCacheHandler, TextUI/Command/ListTestSuitesCommand, TextUI/Configuration/BootstrapScriptDoesNotExistException, TextUI/Configuration/CodeCoverageFilterRegistry, Event/EventFacadeIsSealedException, Runner/Extension/ExtensionFacade, Runner/Extension/PharLoader, TextUI/CliArguments/Builder, TextUI/Command/ListTestsAsXmlCommand, TextUI/Command/ShowVersionCommand, TextUI/Configuration/PhpHandler, TextUI/Command/ValidateConfigurationCommand, TextUI/Output/DefaultPrinter, Logging/OpenTestReporting/OtrXmlLogger, Runner/Baseline/Generator, TextUI/Command/GenerateConfigurationCommand, TextUI/Command/ShowHelpCommand, TextUI/Configuration/BootstrapScriptException, Runner/Baseline/Reader, TextUI/CliArguments/XmlConfigurationFileFinder, TextUI/Output/Printer, Runner/DirectoryDoesNotExistException, Runner/ResultCache/ResultCache, TextUI/Command/AtLeastVersionCommand, TextUI/Command/ListGroupsCommand, TextUI/Command/ListTestsAsTextCommand, TextUI/XmlConfiguration/Loader, Runner/Extension/ExtensionBootstrapper, Runner/Version, TestRunner/IssueFilter, TextUI/CliArguments/Exception, Runner/Baseline/CannotLoadBaselineException, TextUI/Command/ListTestIdsCommand, TextUI/XmlConfiguration/DefaultConfiguration, TextUI/Command/CheckPhpConfigurationCommand, TextUI/Command/VersionCheckCommand, Logging/TestDox/PlainTextRenderer, Runner/ResultCache/DefaultResultCache, Event/UnknownSubscriberTypeException, Runner/IssueTriggerResolver/Resolver, TextUI/XmlConfiguration/Configuration, TextUI/Command/ListTestFilesCommand, Util/DifferBuilder, Framework/TestSuite, Runner/Baseline/Writer, TextUI/Configuration/TestSuiteBuilder, TextUI/Output/Facade, Logging/TestDox/TestResultCollector, Logging/JUnit/JunitXmlLogger, Logging/OpenTestReporting/CannotOpenUriForWritingException, Runner/CodeCoverageInitializationStatus, Util/Http/PhpDownloader, TextUI/Configuration/BootstrapLoader, Runner/Phpt/TestCase, Runner/CodeCoverage, Runner/ErrorHandler, Runner/GarbageCollection/GarbageCollectionHandler, Runner/ResultCache/NullResultCache, TextUI/Command/Result, TextUI/Command/WarmCodeCoverageCacheCommand, Util/Color, TestRunner/TestResult/TestResult, TextUI/Configuration/Configuration, TextUI/Configuration/FilterNotConfiguredException, Runner/Filter/Factory
+define TextUI/Application with Runner/ResultCache/DefaultResultCache, Logging/TestDox/PlainTextRenderer, Runner/IssueTriggerResolver/Resolver, TextUI/XmlConfiguration/Configuration, TextUI/Command/ListTestFilesCommand, Util/DifferBuilder, Event/UnknownSubscriberTypeException, Runner/Baseline/Writer, TextUI/Configuration/TestSuiteBuilder, Framework/TestSuite, Logging/TestDox/TestResultCollector, TextUI/Output/Facade, Logging/OpenTestReporting/CannotOpenUriForWritingException, Runner/CodeCoverageInitializationStatus, Util/Http/PhpDownloader, Logging/JUnit/JunitXmlLogger, Runner/CodeCoverage, Runner/ErrorHandler, Runner/GarbageCollection/GarbageCollectionHandler, Runner/ResultCache/NullResultCache, TextUI/Command/Result, TextUI/Command/WarmCodeCoverageCacheCommand, TextUI/Configuration/BootstrapLoader, Runner/Phpt/TestCase, Logging/TestDox/HtmlRenderer, Runner/TestSuiteSorter, TextUI/Command/MigrateConfigurationCommand, TextUI/Configuration/Registry, Logging/EventLogger, Runner/ResultCache/ResultCacheHandler, TextUI/Command/ListTestSuitesCommand, TextUI/Configuration/BootstrapScriptDoesNotExistException, TextUI/Configuration/CodeCoverageFilterRegistry, Logging/TeamCity/TeamCityLogger, Runner/Extension/ExtensionFacade, Runner/Extension/PharLoader, TextUI/CliArguments/Builder, TextUI/Command/ListTestsAsXmlCommand, TextUI/Command/ShowVersionCommand, TextUI/Configuration/PhpHandler, Event/EventFacadeIsSealedException, TextUI/Output/DefaultPrinter, TextUI/Command/ValidateConfigurationCommand, Runner/Baseline/Generator, TextUI/Command/GenerateConfigurationCommand, TextUI/Command/ShowHelpCommand, TextUI/Configuration/BootstrapScriptException, Logging/OpenTestReporting/OtrXmlLogger, TextUI/CliArguments/XmlConfigurationFileFinder, TextUI/Output/Printer, Runner/Baseline/Reader, Runner/ResultCache/ResultCache, TextUI/Command/AtLeastVersionCommand, TextUI/Command/ListGroupsCommand, TextUI/Command/ListTestsAsTextCommand, TextUI/XmlConfiguration/Loader, Runner/DirectoryDoesNotExistException, Runner/Version, TestRunner/IssueFilter, TextUI/CliArguments/Exception, Runner/Extension/ExtensionBootstrapper, TextUI/Command/ListTestIdsCommand, TextUI/XmlConfiguration/DefaultConfiguration, Runner/Baseline/CannotLoadBaselineException, TextUI/Command/VersionCheckCommand, TextUI/Command/CheckPhpConfigurationCommand
+define TextUI/Command/is with Runner/Version, Util/Color, TextUI/XmlConfiguration/Generator, Runner/Phpt/TestCase, Framework/TestSuite, TextUI/Configuration/Registry, TextUI/XmlConfiguration/Migrator, TextUI/Help, TextUI/XmlConfiguration/CannotFindSchemaException, TextUI/XmlConfiguration/SchemaFinder, TextUI/XmlConfiguration/Validator, Util/Xml/Loader, Util/Xml/XmlException, Util/Http/Downloader, TextUI/Configuration/CodeCoverageFilterRegistry, TextUI/Configuration/Configuration, TextUI/Configuration/NoCoverageCacheDirectoryException
+define TextUI/Command/Command
+define TextUI/Command/AtLeastVersionCommand with Runner/Version, TextUI/Command/Command
+define TextUI/Command/CheckPhpConfigurationCommand with Runner/Version, Util/Color, TextUI/Command/Command
+define TextUI/Command/GenerateConfigurationCommand with Runner/Version, TextUI/XmlConfiguration/Generator, TextUI/Command/Command
+define TextUI/Command/ListGroupsCommand with Runner/Phpt/TestCase, TextUI/Command/Command
+define TextUI/Command/ListTestFilesCommand with Runner/Phpt/TestCase, TextUI/Command/Command
+define TextUI/Command/ListTestIdsCommand with Runner/Phpt/TestCase, TextUI/Command/Command
+define TextUI/Command/ListTestSuitesCommand with Framework/TestSuite, TextUI/Configuration/Registry, TextUI/Command/Command
+define TextUI/Command/ListTestsAsTextCommand with Runner/Phpt/TestCase, TextUI/Command/Command
+define TextUI/Command/ListTestsAsXmlCommand with Runner/Phpt/TestCase, TextUI/Command/Command
+define TextUI/Command/MigrateConfigurationCommand with TextUI/XmlConfiguration/Migrator, TextUI/Command/Command
+define TextUI/Command/ShowHelpCommand with TextUI/Help, TextUI/Command/Command
+define TextUI/Command/ShowVersionCommand with TextUI/Command/Command
+define TextUI/Command/ValidateConfigurationCommand with TextUI/XmlConfiguration/CannotFindSchemaException, TextUI/XmlConfiguration/SchemaFinder, TextUI/XmlConfiguration/Validator, Util/Xml/Loader, Util/Xml/XmlException, Runner/Version, TextUI/Command/Command
+define TextUI/Command/VersionCheckCommand with Util/Http/Downloader, TextUI/Command/Command
+define TextUI/Command/WarmCodeCoverageCacheCommand with TextUI/Configuration/CodeCoverageFilterRegistry, TextUI/Configuration/Configuration, TextUI/Configuration/NoCoverageCacheDirectoryException, TextUI/Command/Command
+define TextUI/Command/Result
+define TextUI/Configuration/is with Event/Facade, TextUI/CliArguments/Exception, TextUI/XmlConfiguration/SchemaDetector, Util/Filesystem, TextUI/XmlConfiguration/LoadedFromFileConfiguration, Runner/TestSuiteSorter, TextUI/XmlConfiguration/Configuration, Util/VersionComparisonOperator, Runner/TestSuiteLoader, TextUI/RuntimeException, TextUI/TestDirectoryNotFoundException, TextUI/TestFileNotFoundException, TextUI/XmlConfiguration/TestSuiteMapper, Exception, Framework/TestSuite
+define TextUI/Configuration/BootstrapLoader with Event/Facade
+define TextUI/Configuration/Builder with TextUI/CliArguments/Builder, TextUI/XmlConfiguration/Exception, TextUI/CliArguments/XmlConfigurationFileFinder, TextUI/XmlConfiguration/DefaultConfiguration, TextUI/XmlConfiguration/Loader
+define TextUI/CliArguments/is with Runner/TestSuiteSorter, Util/Filesystem, Event/Facade
+define TextUI/CliArguments/Builder with Event/Facade, Runner/TestSuiteSorter, Util/Filesystem
+define TextUI/CliArguments/Configuration
+define TextUI/CliArguments/Exception with Exception
+define TextUI/CliArguments/XmlConfigurationFileFinder
+define TextUI/Configuration/CodeCoverageFilterRegistry
+define TextUI/Configuration/Configuration
+define TextUI/Configuration/BootstrapScriptDoesNotExistException with TextUI/Configuration/Exception
+define TextUI/Configuration/BootstrapScriptException with TextUI/Configuration/Exception
+define TextUI/XmlConfiguration/is with TextUI/Configuration/Exception, TextUI/Configuration/Php, TextUI/Configuration/Source, TextUI/Configuration/TestSuiteCollection, TextUI/XmlConfiguration/CodeCoverage/CodeCoverage, TextUI/XmlConfiguration/Logging/Logging, TextUI/Configuration/ExtensionBootstrapCollection, Runner/TestSuiteSorter, TextUI/Configuration/VariableCollection, TextUI/Configuration/FilterFileCollection, TextUI/Configuration/GroupCollection, TextUI/Configuration/IniSettingCollection, TextUI/Configuration/ConstantCollection, TextUI/Configuration/DirectoryCollection, TextUI/Configuration/FilterDirectoryCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura, TextUI/XmlConfiguration/Logging/TestDox/Html, TextUI/XmlConfiguration/CodeCoverage/Report/Xml, TextUI/Configuration/TestDirectory, Util/Xml/Loader, TextUI/XmlConfiguration/CodeCoverage/Report/OpenClover, TextUI/Configuration/Configuration, TextUI/Configuration/File, TextUI/Configuration/Constant, TextUI/Configuration/FilterFile, TextUI/Configuration/Variable, TextUI/XmlConfiguration/Logging/TestDox/Text, Runner/Version, TextUI/XmlConfiguration/CodeCoverage/Report/Php, TextUI/Configuration/Directory, TextUI/Configuration/TestFile, TextUI/Configuration/FilterDirectory, TextUI/Configuration/FileCollection, TextUI/XmlConfiguration/Logging/Otr, TextUI/Configuration/Group, TextUI/Configuration/TestFileCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j, TextUI/XmlConfiguration/Logging/Junit, TextUI/XmlConfiguration/Logging/TeamCity, Event/Facade, TextUI/Configuration/IniSetting, TextUI/Configuration/TestDirectoryCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Clover, Util/VersionComparisonOperator, TextUI/Configuration/ExtensionBootstrap, TextUI/Configuration/TestSuite, Util/Xml/XmlException, Exception, TextUI/RuntimeException, TextUI/TestDirectoryNotFoundException, TextUI/TestFileNotFoundException, Framework/Exception, Framework/TestSuite
+define TextUI/XmlConfiguration/CannotFindSchemaException with TextUI/Configuration/Exception
+define TextUI/Configuration/CodeCoverageReportNotConfiguredException with TextUI/Configuration/Exception
+define TextUI/Configuration/ConfigurationCannotBeBuiltException with TextUI/Configuration/Exception
+define TextUI/Configuration/Exception with TextUI/Exception
+define TextUI/Configuration/FilterNotConfiguredException with TextUI/Configuration/Exception
+define TextUI/Configuration/LoggingNotConfiguredException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoBaselineException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoBootstrapException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoCacheDirectoryException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoConfigurationFileException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoCoverageCacheDirectoryException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoCustomCssFileException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoDefaultTestSuiteException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoHtmlCoverageTargetException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoPharExtensionDirectoryException with TextUI/Configuration/Exception
+define TextUI/Configuration/NoTestFilesFileException with TextUI/Configuration/Exception
+define TextUI/Configuration/SpecificDeprecationToStopOnNotConfiguredException with TextUI/Configuration/Exception
+define TextUI/Configuration/FileFilterMapper
+define TextUI/Configuration/Merger with Event/Facade, Runner/TestSuiteSorter, TextUI/XmlConfiguration/Configuration, TextUI/XmlConfiguration/LoadedFromFileConfiguration, TextUI/CliArguments/Exception, TextUI/XmlConfiguration/SchemaDetector, Util/Filesystem
+define TextUI/Configuration/PhpHandler with Event/Facade
+define TextUI/Configuration/Registry with Event/Facade, TextUI/XmlConfiguration/Configuration, TextUI/CliArguments/Exception, Util/VersionComparisonOperator
+define TextUI/Configuration/SourceFilter
+define TextUI/Configuration/SourceMapper
+define TextUI/Configuration/TestSuiteBuilder with Exception, Framework/TestSuite, Runner/TestSuiteLoader, TextUI/RuntimeException, TextUI/TestDirectoryNotFoundException, TextUI/TestFileNotFoundException, TextUI/XmlConfiguration/TestSuiteMapper
+define TextUI/Configuration/Constant
+define TextUI/Configuration/ConstantCollection
+define TextUI/Configuration/ConstantCollectionIterator
+define TextUI/Configuration/Directory
+define TextUI/Configuration/DirectoryCollection
+define TextUI/Configuration/DirectoryCollectionIterator
+define TextUI/Configuration/ExtensionBootstrap
+define TextUI/Configuration/ExtensionBootstrapCollection
+define TextUI/Configuration/ExtensionBootstrapCollectionIterator
+define TextUI/Configuration/File
+define TextUI/Configuration/FileCollection
+define TextUI/Configuration/FileCollectionIterator
+define TextUI/Configuration/FilterDirectory
+define TextUI/Configuration/FilterDirectoryCollection
+define TextUI/Configuration/FilterDirectoryCollectionIterator
+define TextUI/Configuration/FilterFile
+define TextUI/Configuration/FilterFileCollection
+define TextUI/Configuration/FilterFileCollectionIterator
+define TextUI/Configuration/Group
+define TextUI/Configuration/GroupCollection
+define TextUI/Configuration/GroupCollectionIterator
+define TextUI/Configuration/IniSetting
+define TextUI/Configuration/IniSettingCollection
+define TextUI/Configuration/IniSettingCollectionIterator
+define TextUI/Configuration/Php
+define TextUI/Configuration/Source
+define TextUI/Configuration/TestDirectory with Util/VersionComparisonOperator
+define TextUI/Configuration/TestDirectoryCollection
+define TextUI/Configuration/TestDirectoryCollectionIterator
+define TextUI/Configuration/TestFile with Util/VersionComparisonOperator
+define TextUI/Configuration/TestFileCollection
+define TextUI/Configuration/TestFileCollectionIterator
+define TextUI/Configuration/TestSuite
+define TextUI/Configuration/TestSuiteCollection
+define TextUI/Configuration/TestSuiteCollectionIterator
+define TextUI/Configuration/Variable
+define TextUI/Configuration/VariableCollection
+define TextUI/Configuration/VariableCollectionIterator
+define TextUI/XmlConfiguration/CodeCoverage/is with TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j, TextUI/XmlConfiguration/CodeCoverage/Report/Html, TextUI/XmlConfiguration/CodeCoverage/Report/OpenClover, TextUI/XmlConfiguration/CodeCoverage/Report/Xml, TextUI/XmlConfiguration/CodeCoverage/Report/Clover, TextUI/XmlConfiguration/CodeCoverage/Report/Php, TextUI/XmlConfiguration/CodeCoverage/Report/Text, TextUI/XmlConfiguration/Exception, TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura
+define TextUI/XmlConfiguration/CodeCoverage/CodeCoverage with TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura, TextUI/XmlConfiguration/CodeCoverage/Report/Php, TextUI/XmlConfiguration/CodeCoverage/Report/Text, TextUI/XmlConfiguration/Exception, TextUI/XmlConfiguration/CodeCoverage/Report/Xml, TextUI/XmlConfiguration/CodeCoverage/Report/Clover, TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j, TextUI/XmlConfiguration/CodeCoverage/Report/Html, TextUI/XmlConfiguration/CodeCoverage/Report/OpenClover
+define TextUI/XmlConfiguration/CodeCoverage/Report/is with TextUI/Configuration/File, TextUI/Configuration/Directory, TextUI/Configuration/NoCustomCssFileException, TextUI/Configuration/NoHtmlCoverageTargetException
+define TextUI/XmlConfiguration/CodeCoverage/Report/Clover with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Html with TextUI/Configuration/Directory, TextUI/Configuration/NoCustomCssFileException, TextUI/Configuration/NoHtmlCoverageTargetException
+define TextUI/XmlConfiguration/CodeCoverage/Report/OpenClover with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Php with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Text with TextUI/Configuration/File
+define TextUI/XmlConfiguration/CodeCoverage/Report/Xml with TextUI/Configuration/Directory
+define TextUI/XmlConfiguration/Configuration with TextUI/Configuration/ExtensionBootstrapCollection, TextUI/Configuration/Php, TextUI/Configuration/Source, TextUI/Configuration/TestSuiteCollection, TextUI/XmlConfiguration/CodeCoverage/CodeCoverage, TextUI/XmlConfiguration/Logging/Logging
+define TextUI/XmlConfiguration/DefaultConfiguration with TextUI/Configuration/ExtensionBootstrapCollection, TextUI/Configuration/Source, TextUI/Configuration/VariableCollection, Runner/TestSuiteSorter, TextUI/Configuration/TestSuiteCollection, TextUI/Configuration/FilterDirectoryCollection, TextUI/Configuration/FilterFileCollection, TextUI/Configuration/GroupCollection, TextUI/Configuration/IniSettingCollection, TextUI/Configuration/Php, TextUI/XmlConfiguration/CodeCoverage/CodeCoverage, TextUI/Configuration/ConstantCollection, TextUI/Configuration/DirectoryCollection, TextUI/XmlConfiguration/Logging/Logging, TextUI/XmlConfiguration/Configuration
+define TextUI/XmlConfiguration/Exception with Exception
+define TextUI/XmlConfiguration/Generator
+define TextUI/XmlConfiguration/Groups with TextUI/Configuration/GroupCollection
+define TextUI/XmlConfiguration/LoadedFromFileConfiguration with TextUI/Configuration/ExtensionBootstrapCollection, TextUI/Configuration/Php, TextUI/Configuration/Source, TextUI/Configuration/TestSuiteCollection, TextUI/XmlConfiguration/CodeCoverage/CodeCoverage, TextUI/XmlConfiguration/Logging/Logging, TextUI/XmlConfiguration/Configuration
+define TextUI/XmlConfiguration/Loader with TextUI/Configuration/TestSuiteCollection, TextUI/Configuration/VariableCollection, TextUI/XmlConfiguration/Logging/Otr, TextUI/XmlConfiguration/Logging/TeamCity, TextUI/Configuration/Group, TextUI/Configuration/TestFileCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Crap4j, TextUI/XmlConfiguration/Logging/Junit, Event/Facade, TextUI/Configuration/GroupCollection, TextUI/Configuration/Source, TextUI/Configuration/IniSetting, TextUI/Configuration/TestDirectoryCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Clover, Util/VersionComparisonOperator, TextUI/Configuration/ExtensionBootstrap, TextUI/XmlConfiguration/CodeCoverage/CodeCoverage, TextUI/XmlConfiguration/Logging/Logging, TextUI/Configuration/ExtensionBootstrapCollection, TextUI/Configuration/TestSuite, Util/Xml/XmlException, TextUI/Configuration/FilterFileCollection, TextUI/XmlConfiguration/CodeCoverage/Report/Cobertura, TextUI/XmlConfiguration/Logging/TestDox/Html, TextUI/XmlConfiguration/CodeCoverage/Report/Xml, TextUI/Configuration/DirectoryCollection, TextUI/Configuration/TestDirectory, Util/Xml/Loader, Runner/TestSuiteSorter, TextUI/Configuration/IniSettingCollection, TextUI/XmlConfiguration/CodeCoverage/Report/OpenClover, TextUI/Configuration/FilterDirectoryCollection, TextUI/Configuration/Configuration, TextUI/Configuration/ConstantCollection, TextUI/Configuration/File, TextUI/Configuration/Constant, TextUI/Configuration/FilterFile, TextUI/Configuration/Variable, Runner/Version, TextUI/XmlConfiguration/Logging/TestDox/Text, TextUI/XmlConfiguration/CodeCoverage/Report/Php, TextUI/Configuration/Directory, TextUI/Configuration/TestFile, TextUI/Configuration/FileCollection, TextUI/Configuration/FilterDirectory
+define TextUI/XmlConfiguration/Logging/is with TextUI/Configuration/File, TextUI/XmlConfiguration/Exception, TextUI/XmlConfiguration/Logging/TestDox/Html, TextUI/XmlConfiguration/Logging/TestDox/Text
+define TextUI/XmlConfiguration/Logging/Junit with TextUI/Configuration/File
+define TextUI/XmlConfiguration/Logging/Logging with TextUI/XmlConfiguration/Exception, TextUI/XmlConfiguration/Logging/TestDox/Html, TextUI/XmlConfiguration/Logging/TestDox/Text
+define TextUI/XmlConfiguration/Logging/Otr with TextUI/Configuration/File
+define TextUI/XmlConfiguration/Logging/TeamCity with TextUI/Configuration/File
+define TextUI/XmlConfiguration/Logging/TestDox/is with TextUI/Configuration/File
+define TextUI/XmlConfiguration/Logging/TestDox/Html with TextUI/Configuration/File
+define TextUI/XmlConfiguration/Logging/TestDox/Text with TextUI/Configuration/File
+define TextUI/XmlConfiguration/MigrationBuilder
+define TextUI/XmlConfiguration/MigrationException with Exception
+define TextUI/XmlConfiguration/ConvertLogTypes with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/CoverageCloverToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/CoverageCrap4jToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/CoverageHtmlToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/CoveragePhpToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/CoverageTextToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/CoverageXmlToReport with TextUI/XmlConfiguration/LogToReportMigration
+define TextUI/XmlConfiguration/IntroduceCacheDirectoryAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/IntroduceCoverageElement with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/LogToReportMigration with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/MoveAttributesFromFilterWhitelistToCoverage with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/MoveAttributesFromRootToCoverage with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/MoveCoverageDirectoriesToSource with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/MoveWhitelistExcludesToCoverage with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/MoveWhitelistIncludesToCoverage with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveBeStrictAboutResourceUsageDuringSmallTestsAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveBeStrictAboutTodoAnnotatedTestsAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveCacheResultFileAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveCacheTokensAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveConversionToExceptionsAttributes with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveCoverageElementCacheDirectoryAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveCoverageElementProcessUncoveredFilesAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveEmptyFilter with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveListeners with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveLogTypes with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveLoggingElements with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveNoInteractionAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemovePrinterAttributes with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveRegisterMockObjectsFromTestArgumentsRecursivelyAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveTestDoxGroupsElement with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveTestSuiteLoaderAttributes with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RemoveVerboseAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RenameBackupStaticAttributesAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RenameBeStrictAboutCoversAnnotationAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RenameExecutionOrderOptionsDurationAndSize with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/RenameForceCoversAnnotationAttribute with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/ReplaceRestrictDeprecationsWithIgnoreDeprecations with TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/UpdateSchemaLocation with Runner/Version, TextUI/XmlConfiguration/Migration
+define TextUI/XmlConfiguration/Migrator with Runner/Version, Util/Xml/Loader, Util/Xml/XmlException
+define TextUI/XmlConfiguration/SnapshotNodeList
+define TextUI/XmlConfiguration/PHPUnit
+define TextUI/XmlConfiguration/FailedSchemaDetectionResult with TextUI/XmlConfiguration/SchemaDetectionResult
+define TextUI/XmlConfiguration/SchemaDetectionResult with Util/Xml/XmlException
+define TextUI/XmlConfiguration/SchemaDetector with Util/Xml/Loader, Util/Xml/XmlException
+define TextUI/XmlConfiguration/SuccessfulSchemaDetectionResult with TextUI/XmlConfiguration/SchemaDetectionResult
+define TextUI/XmlConfiguration/SchemaFinder with Runner/Version
+define TextUI/XmlConfiguration/TestSuiteMapper with Framework/Exception, Framework/TestSuite, TextUI/Configuration/TestSuiteCollection, TextUI/RuntimeException, TextUI/TestDirectoryNotFoundException, TextUI/TestFileNotFoundException
+define TextUI/XmlConfiguration/ValidationResult
+define TextUI/XmlConfiguration/Validator
+define TextUI/CannotOpenSocketException with TextUI/Exception
+define TextUI/Exception
+define TextUI/InvalidSocketException with TextUI/Exception
+define TextUI/RuntimeException with TextUI/Exception
+define TextUI/TestDirectoryNotFoundException with TextUI/Exception
+define TextUI/TestFileNotFoundException with TextUI/Exception
+define TextUI/Help with Util/Color
+define TextUI/Output/Default/ProgressPrinter/is with Event/TestRunner/ExecutionStarted, Framework/TestStatus/TestStatus, Event/TestRunner/ChildProcessErrored, TextUI/Configuration/Source, TextUI/Output/Printer, Util/Color, TextUI/Configuration/SourceFilter, Event/Facade, Event/TestRunner/ExecutionStartedSubscriber, Event/TestSuite/SkippedSubscriber, Event/TestSuite/Skipped
+define TextUI/Output/Default/ProgressPrinter/ProgressPrinter with Event/TestRunner/ExecutionStarted, Framework/TestStatus/TestStatus, Event/TestRunner/ChildProcessErrored, TextUI/Configuration/Source, TextUI/Output/Printer, Util/Color, TextUI/Configuration/SourceFilter, Event/Facade
+define TextUI/Output/Default/ProgressPrinter/BeforeTestClassMethodErroredSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/ChildProcessErroredSubscriber with Event/TestRunner/ChildProcessErrored, TextUI/Output/Default/ProgressPrinter/Subscriber, Event/TestRunner/ChildProcessErroredSubscriber
+define TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestConsideredRiskySubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestErroredSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestFailedSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestFinishedSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestMarkedIncompleteSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestPreparedSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestRunnerExecutionStartedSubscriber with Event/TestRunner/ExecutionStarted, Event/TestRunner/ExecutionStartedSubscriber, TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestSkippedSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestSuiteSkippedSubscriber with Event/TestSuite/Skipped, Event/TestSuite/SkippedSubscriber, TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredDeprecationSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredErrorSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredNoticeSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpDeprecationSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpNoticeSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpWarningSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpunitDeprecationSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpunitNoticeSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredPhpunitWarningSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/ProgressPrinter/TestTriggeredWarningSubscriber with TextUI/Output/Default/ProgressPrinter/Subscriber
+define TextUI/Output/Default/is with TestRunner/TestResult/Issues/Issue, TextUI/Output/Printer, TestRunner/TestResult/TestResult
+define TextUI/Output/Default/ResultPrinter with TestRunner/TestResult/TestResult, TestRunner/TestResult/Issues/Issue, TextUI/Output/Printer
+define TextUI/Output/Default/UnexpectedOutputPrinter with Event/Facade, TextUI/Output/Printer
+define TextUI/Output/is with TextUI/CannotOpenSocketException, TextUI/Output/Default/UnexpectedOutputPrinter, Event/Facade, Logging/TeamCity/TeamCityLogger, Runner/DirectoryDoesNotExistException, TestRunner/TestResult/TestResult, TextUI/Output/TestDox/ResultPrinter, Logging/TestDox/TestResultCollection, TextUI/Configuration/Configuration, TextUI/InvalidSocketException, TextUI/Output/Default/ProgressPrinter/ProgressPrinter, Util/Filesystem, Util/Color
+define TextUI/Output/Facade with TextUI/Configuration/Configuration, TextUI/InvalidSocketException, TextUI/Output/Default/ProgressPrinter/ProgressPrinter, TextUI/Output/TestDox/ResultPrinter, Logging/TestDox/TestResultCollection, Logging/TeamCity/TeamCityLogger, Runner/DirectoryDoesNotExistException, TestRunner/TestResult/TestResult, TextUI/CannotOpenSocketException, TextUI/Output/Default/UnexpectedOutputPrinter, Event/Facade
+define TextUI/Output/DefaultPrinter with Runner/DirectoryDoesNotExistException, TextUI/CannotOpenSocketException, TextUI/InvalidSocketException, Util/Filesystem, TextUI/Output/Printer
+define TextUI/Output/NullPrinter with TextUI/Output/Printer
+define TextUI/Output/Printer
+define TextUI/Output/SummaryPrinter with TestRunner/TestResult/TestResult, Util/Color
+define TextUI/Output/TestDox/is with Util/Color, Event/Code/Throwable, Framework/TestStatus/TestStatus, TestRunner/TestResult/TestResult, Logging/TestDox/TestResultCollection, TextUI/Output/Printer
+define TextUI/Output/TestDox/ResultPrinter with Event/Code/Throwable, Framework/TestStatus/TestStatus, TestRunner/TestResult/TestResult, Logging/TestDox/TestResultCollection, TextUI/Output/Printer, Util/Color
+define TextUI/ShellExitCodeCalculator with TestRunner/TestResult/TestResult, TextUI/Configuration/Configuration
+define TextUI/TestRunner with Framework/TestSuite, Runner/ResultCache/ResultCache, Runner/TestSuiteSorter, TextUI/Configuration/Configuration
+define TextUI/TestSuiteFilterProcessor with TextUI/Configuration/FilterNotConfiguredException, Framework/TestSuite, Runner/Filter/Factory, TextUI/Configuration/Configuration
+define Util/is with TextUI/Configuration/Registry, Framework/Exception, Framework/PhptAssertionFailedError, Framework/Assert, Framework/TestCase, Metadata/Parser/Registry, Event/Code/NoTestCaseObjectOnCallStackException, Framework/ExpectationFailedException, Framework/SelfDescribing, Runner/ErrorException
+define Util/Color
+define Util/DifferBuilder with TextUI/Configuration/Registry
+define Util/Exception
+define Util/InvalidDirectoryException with Util/Exception
+define Util/InvalidJsonException with Util/Exception
+define Util/InvalidVersionOperatorException with Util/Exception
+define Util/PHP/is with Util/Exception, Framework/ChildProcessResultProcessor, Framework/Test, Runner/CodeCoverage, Event/Facade, TestRunner/TestResult/PassedTests
+define Util/PHP/PhpProcessException with Util/Exception
+define Util/Xml/is with Util/Exception
+define Util/Xml/XmlException with Util/Exception
+define Util/ExcludeList with Framework/TestCase
+define Util/Exporter with TextUI/Configuration/Registry
+define Util/Filesystem
+define Util/Filter with Framework/Exception, Framework/PhptAssertionFailedError
+define Util/GlobalState
+define Util/GlobalStateResult
+define Util/Http/is
+define Util/Http/Downloader
+define Util/Http/PhpDownloader with Util/Http/Downloader
+define Util/Json
+define Util/PHP/Job
+define Util/PHP/JobRunner with Event/Facade, Framework/ChildProcessResultProcessor, Framework/Test, Runner/CodeCoverage
+define Util/PHP/JobRunnerRegistry with Framework/Test, Runner/CodeCoverage, TestRunner/TestResult/PassedTests, Event/Facade, Framework/ChildProcessResultProcessor
+define Util/PHP/Result
+define Util/Reflection with Framework/Assert, Framework/TestCase
+define Util/Test with Event/Code/NoTestCaseObjectOnCallStackException, Framework/TestCase, Metadata/Parser/Registry
+define Util/ThrowableToStringMapper with Runner/ErrorException, Framework/ExpectationFailedException, Framework/PhptAssertionFailedError, Framework/SelfDescribing
+define Util/VersionComparisonOperator
+define Util/Xml/Loader
+define Util/Xml

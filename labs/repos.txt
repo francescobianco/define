@@ -1,4 +1,5 @@
 # name           url                                              branch    profile
+phpunit          https://github.com/sebastianbergmann/phpunit     main      php-phpunit
 cobra            https://github.com/spf13/cobra                   main      go-generic
 gin              https://github.com/gin-gonic/gin                 master    go-generic
 chi              https://github.com/go-chi/chi                    master    go-generic

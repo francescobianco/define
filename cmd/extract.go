@@ -88,7 +88,10 @@ func runExtract(cmd *cobra.Command, args []string) error {
 			return fmt.Errorf("parse error in extracted model: %w", err)
 		}
 		g := graph.Build(file)
-		rootSymbol := g.Order[0]
+		rootSymbol := cfg.Root
+		if rootSymbol == "" {
+			rootSymbol = g.Order[0]
+		}
 		closure := graph.CheckClosure(g, rootSymbol)
 		reachable := graph.Reachable(g, rootSymbol)
 		dead := graph.FindDead(g, rootSymbol)
